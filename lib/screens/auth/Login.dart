@@ -137,10 +137,11 @@ class _LoginState extends State<Login> {
           child: Align(
             alignment: Alignment.centerRight,
             child: TextButton(
+                onPressed: () {},
                 child: Text(
-              'Resend OTP',
-              style: TextStyle(color: Colors.grey, fontSize: 16),
-            )),
+                  'Resend OTP',
+                  style: TextStyle(color: Colors.grey, fontSize: 16),
+                )),
           ),
         ),
       ],
