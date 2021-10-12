@@ -30,25 +30,28 @@ class _AboutScreen1State extends State<AboutScreen1> {
     Container(
       child: Column(
         children: [
-          Container(
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(20),
-              color: Colors.grey.shade700,
-            ),
-            width: 300,
-            height: 30,
+          Text(
+            'Welcome! Here is the App',
+            style: TextStyle(
+                color: Colors.grey.shade700,
+                fontSize: 20,
+                fontWeight: FontWeight.bold),
           ),
           SizedBox(height: 20),
-          Container(
-            height: 5,
-            width: 100,
-            color: Colors.grey.shade700,
+          Text(
+            'Enjoy it!',
+            style: TextStyle(
+              color: Colors.grey.shade700,
+              fontSize: 20,
+            ),
           ),
           SizedBox(height: 10),
-          Container(
-            height: 5,
-            width: 250,
-            color: Colors.grey.shade700,
+          Text(
+            '!',
+            style: TextStyle(
+              color: Colors.grey.shade700,
+              fontSize: 20,
+            ),
           ),
           SizedBox(height: 100),
         ],
@@ -186,6 +189,13 @@ class _AboutScreen1State extends State<AboutScreen1> {
                             decoration: BoxDecoration(
                                 border: Border.all(color: Colors.grey.shade800),
                                 borderRadius: BorderRadius.circular(20)),
+                            child: Center(
+                              child: Text(
+                                'Skip',
+                                style: TextStyle(
+                                    color: Colors.black, fontSize: 18),
+                              ),
+                            ),
                           ),
                           onTap: () {
                             Navigator.pushReplacement(
@@ -202,8 +212,16 @@ class _AboutScreen1State extends State<AboutScreen1> {
                             height: 30,
                             width: 80,
                             decoration: BoxDecoration(
-                                color: Colors.grey.shade700,
-                                borderRadius: BorderRadius.circular(20)),
+                              color: Colors.grey.shade700,
+                              borderRadius: BorderRadius.circular(20),
+                            ),
+                            child: Center(
+                              child: Text(
+                                'Next',
+                                style: TextStyle(
+                                    color: Colors.white, fontSize: 18),
+                              ),
+                            ),
                           ),
                           onTap: _animteWidget,
                         ),
