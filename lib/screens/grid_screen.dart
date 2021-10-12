@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
+import 'package:gaurily/screens/auth/splash_screen.dart';
 import 'package:gaurily/screens/grid_screen_names.dart';
 
 class GridViewScreen extends StatelessWidget {
