@@ -1,4 +1,8 @@
+import 'dart:io';
+
+import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
+import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 class HomeScreen extends StatefulWidget {
   @override
@@ -6,49 +10,53 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
+  int activeIndex = 0;
+  final _urlImages = [
+    "https://images.pexels.com/photos/2286400/pexels-photo-2286400.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+    "https://images.pexels.com/photos/2808556/pexels-photo-2808556.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+    "https://images.pexels.com/photos/2131600/pexels-photo-2131600.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+    "https://images.pexels.com/photos/2328991/pexels-photo-2328991.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+    "https://images.pexels.com/photos/3385375/pexels-photo-3385375.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+    "https://images.pexels.com/photos/5673960/pexels-photo-5673960.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+    "https://images.pexels.com/photos/177332/pexels-photo-177332.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+  ];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      //Bottom App Bar
       bottomNavigationBar: BottomAppBar(
         color: Colors.grey.shade400,
         child: Padding(
-          padding: const EdgeInsets.all(10.0),
+          padding: const EdgeInsets.only(bottom: 10),
           child: Row(
-            mainAxisSize: MainAxisSize.max,
+            mainAxisSize: MainAxisSize.min,
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
-              Container(
-                height: 40,
-                width: 40,
-                decoration: BoxDecoration(
-                    color: Colors.grey.shade700,
-                    border: Border.all(color: Colors.grey.shade700, width: 2),
-                    borderRadius: BorderRadius.circular(7)),
-              ),
-              Container(
-                height: 40,
-                width: 40,
-                decoration: BoxDecoration(
-                    color: Colors.grey.shade700,
-                    border: Border.all(color: Colors.grey.shade700, width: 2),
-                    borderRadius: BorderRadius.circular(7)),
-              ),
-              Container(
-                height: 40,
-                width: 40,
-                decoration: BoxDecoration(
-                    color: Colors.grey.shade700,
-                    border: Border.all(color: Colors.grey.shade700, width: 2),
-                    borderRadius: BorderRadius.circular(7)),
-              ),
-              Container(
-                height: 40,
-                width: 40,
-                decoration: BoxDecoration(
-                    color: Colors.grey.shade700,
-                    border: Border.all(color: Colors.grey.shade700, width: 2),
-                    borderRadius: BorderRadius.circular(7)),
-              ),
+              IconButton(
+                  onPressed: () {},
+                  icon: Icon(
+                    Icons.home_filled,
+                    size: 40,
+                  )),
+              IconButton(
+                  onPressed: () {},
+                  icon: Icon(
+                    Icons.search_sharp,
+                    size: 40,
+                  )),
+              IconButton(
+                  onPressed: () {},
+                  icon: Icon(
+                    Icons.favorite_border,
+                    size: 40,
+                  )),
+              IconButton(
+                  onPressed: () {},
+                  icon: Icon(
+                    Icons.person,
+                    size: 40,
+                  )),
             ],
           ),
         ),
@@ -61,6 +69,7 @@ class _HomeScreenState extends State<HomeScreen> {
               Container(
                 height: 60,
                 color: Colors.black,
+                //Custom AppBar
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
@@ -82,31 +91,26 @@ class _HomeScreenState extends State<HomeScreen> {
                       child: Container(
                         child: Row(
                           children: [
-                            Container(
-                              height: 30,
-                              width: 30,
-                              decoration: BoxDecoration(
-                                  border:
-                                      Border.all(color: Colors.white, width: 2),
-                                  borderRadius: BorderRadius.circular(7)),
+                            IconButton(
+                              icon: Icon(
+                                Icons.notifications,
+                                color: Colors.white,
+                              ),
+                              onPressed: () {},
                             ),
-                            SizedBox(width: 20),
-                            Container(
-                              height: 30,
-                              width: 30,
-                              decoration: BoxDecoration(
-                                  border:
-                                      Border.all(color: Colors.white, width: 2),
-                                  borderRadius: BorderRadius.circular(7)),
+                            IconButton(
+                              icon: Icon(
+                                Icons.shopping_cart,
+                                color: Colors.white,
+                              ),
+                              onPressed: () {},
                             ),
-                            SizedBox(width: 20),
-                            Container(
-                              height: 30,
-                              width: 30,
-                              decoration: BoxDecoration(
-                                  border:
-                                      Border.all(color: Colors.white, width: 2),
-                                  borderRadius: BorderRadius.circular(7)),
+                            IconButton(
+                              icon: Icon(
+                                Icons.more_vert_sharp,
+                                color: Colors.white,
+                              ),
+                              onPressed: () {},
                             ),
                           ],
                         ),
@@ -118,6 +122,7 @@ class _HomeScreenState extends State<HomeScreen> {
               SizedBox(
                 height: 10,
               ),
+              // Circular Images
               Container(
                 height: 70,
                 width: double.infinity,
@@ -145,19 +150,10 @@ class _HomeScreenState extends State<HomeScreen> {
                             width: 3.0,
                           ),
                         ),
-                      ),
-                      SizedBox(
-                        width: 10,
-                      ),
-                      Container(
-                        width: 50.0,
-                        height: 30.0,
-                        decoration: BoxDecoration(
-                          color: Colors.white,
-                          borderRadius: BorderRadius.all(Radius.circular(50.0)),
-                          border: Border.all(
-                            color: Colors.black,
-                            width: 3.0,
+                        child: ClipOval(
+                          child: Image.network(
+                            "https://images.pexels.com/photos/9800864/pexels-photo-9800864.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+                            fit: BoxFit.cover,
                           ),
                         ),
                       ),
@@ -175,19 +171,10 @@ class _HomeScreenState extends State<HomeScreen> {
                             width: 3.0,
                           ),
                         ),
-                      ),
-                      SizedBox(
-                        width: 10,
-                      ),
-                      Container(
-                        width: 50.0,
-                        height: 30.0,
-                        decoration: BoxDecoration(
-                          color: Colors.white,
-                          borderRadius: BorderRadius.all(Radius.circular(50.0)),
-                          border: Border.all(
-                            color: Colors.black,
-                            width: 3.0,
+                        child: ClipOval(
+                          child: Image.network(
+                            "https://images.pexels.com/photos/458766/pexels-photo-458766.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+                            fit: BoxFit.cover,
                           ),
                         ),
                       ),
@@ -205,19 +192,10 @@ class _HomeScreenState extends State<HomeScreen> {
                             width: 3.0,
                           ),
                         ),
-                      ),
-                      SizedBox(
-                        width: 10,
-                      ),
-                      Container(
-                        width: 50.0,
-                        height: 30.0,
-                        decoration: BoxDecoration(
-                          color: Colors.white,
-                          borderRadius: BorderRadius.all(Radius.circular(50.0)),
-                          border: Border.all(
-                            color: Colors.black,
-                            width: 3.0,
+                        child: ClipOval(
+                          child: Image.network(
+                            "https://images.pexels.com/photos/1446161/pexels-photo-1446161.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+                            fit: BoxFit.cover,
                           ),
                         ),
                       ),
@@ -235,6 +213,12 @@ class _HomeScreenState extends State<HomeScreen> {
                             width: 3.0,
                           ),
                         ),
+                        child: ClipOval(
+                          child: Image.network(
+                            "https://images.pexels.com/photos/3221176/pexels-photo-3221176.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+                            fit: BoxFit.cover,
+                          ),
+                        ),
                       ),
                       SizedBox(
                         width: 10,
@@ -249,6 +233,73 @@ class _HomeScreenState extends State<HomeScreen> {
                             color: Colors.black,
                             width: 3.0,
                           ),
+                        ),
+                        child: ClipOval(
+                          child: Image.network(
+                            "https://images.pexels.com/photos/2673365/pexels-photo-2673365.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+                            fit: BoxFit.cover,
+                          ),
+                        ),
+                      ),
+                      SizedBox(
+                        width: 10,
+                      ),
+                      Container(
+                        width: 50.0,
+                        height: 30.0,
+                        decoration: BoxDecoration(
+                          color: Colors.white,
+                          borderRadius: BorderRadius.all(Radius.circular(50.0)),
+                          border: Border.all(
+                            color: Colors.black,
+                            width: 3.0,
+                          ),
+                        ),
+                        child: ClipOval(
+                          child: Image.network(
+                            "https://images.pexels.com/photos/1308582/pexels-photo-1308582.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+                            fit: BoxFit.cover,
+                          ),
+                        ),
+                      ),
+                      SizedBox(
+                        width: 10,
+                      ),
+                      Container(
+                        width: 50.0,
+                        height: 30.0,
+                        decoration: BoxDecoration(
+                          color: Colors.white,
+                          borderRadius: BorderRadius.all(Radius.circular(50.0)),
+                          border: Border.all(
+                            color: Colors.black,
+                            width: 3.0,
+                          ),
+                        ),
+                        child: ClipOval(
+                          child: Image.network(
+                            "https://images.pexels.com/photos/2058070/pexels-photo-2058070.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+                            fit: BoxFit.cover,
+                          ),
+                        ),
+                      ),
+                      SizedBox(
+                        width: 10,
+                      ),
+                      Container(
+                        width: 50.0,
+                        height: 30.0,
+                        decoration: BoxDecoration(
+                          color: Colors.white,
+                          borderRadius: BorderRadius.all(Radius.circular(50.0)),
+                          border: Border.all(
+                            color: Colors.black,
+                            width: 3.0,
+                          ),
+                        ),
+                        child: ClipOval(
+                          child: Image.network(
+                              "https://images.pexels.com/photos/1454168/pexels-photo-1454168.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"),
                         ),
                       ),
                     ],
@@ -256,60 +307,29 @@ class _HomeScreenState extends State<HomeScreen> {
                 ),
               ),
               Container(
-                color: Colors.grey[100],
                 height: 300,
+                width: double.infinity,
+                child: CarouselSlider.builder(
+                  options: CarouselOptions(
+                    height: 300,
+                    autoPlay: true,
+                    viewportFraction: 1,
+                    enableInfiniteScroll: false,
+                    onPageChanged: (index, reason) => setState(() {
+                      activeIndex = index;
+                    }),
+                  ),
+                  itemCount: _urlImages.length,
+                  itemBuilder: (context, index, realIndex) {
+                    final _urlImage = _urlImages[index];
+                    return buildImage(_urlImage, index);
+                  },
+                ),
               ),
               SizedBox(
                 height: 10,
               ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  Container(
-                    height: 10,
-                    width: 10,
-                    decoration: BoxDecoration(
-                      color: Colors.white,
-                      borderRadius: BorderRadius.all(Radius.circular(50.0)),
-                      border: Border.all(
-                        color: Colors.black,
-                        width: 1.0,
-                      ),
-                    ),
-                  ),
-                  SizedBox(
-                    width: 15,
-                  ),
-                  Container(
-                    height: 10,
-                    width: 10,
-                    decoration: BoxDecoration(
-                      color: Colors.black,
-                      borderRadius: BorderRadius.all(Radius.circular(50.0)),
-                      border: Border.all(
-                        color: Colors.black,
-                        width: 1.0,
-                      ),
-                    ),
-                  ),
-                  SizedBox(
-                    width: 15,
-                  ),
-                  Container(
-                    height: 10,
-                    width: 10,
-                    decoration: BoxDecoration(
-                      color: Colors.white,
-                      borderRadius: BorderRadius.all(Radius.circular(50.0)),
-                      border: Border.all(
-                        color: Colors.black,
-                        width: 1.0,
-                      ),
-                    ),
-                  )
-                ],
-              ),
+              _buildIndicator(),
               SizedBox(
                 height: 10,
               ),
@@ -379,4 +399,25 @@ class _HomeScreenState extends State<HomeScreen> {
       ),
     );
   }
+
+  @override
+  Widget buildImage(String urlImage, int index) {
+    return Container(
+      margin: EdgeInsets.symmetric(horizontal: 5),
+      width: double.infinity,
+      child: ClipRRect(
+        borderRadius: BorderRadius.circular(10),
+        child: Image.network(
+          _urlImages[index],
+          fit: BoxFit.fill,
+        ),
+      ),
+    );
+  }
+
+  @override
+  Widget _buildIndicator() => AnimatedSmoothIndicator(
+        activeIndex: activeIndex,
+        count: _urlImages.length,
+      );
 }

@@ -8,7 +8,7 @@ class AboutScreen1 extends StatefulWidget {
 }
 
 class _AboutScreen1State extends State<AboutScreen1> {
-  final double circleRadius = 200.0;
+  final double circleRadius = 180.0;
 
   final double circleBorderWidth = 10.0;
 
@@ -20,6 +20,7 @@ class _AboutScreen1State extends State<AboutScreen1> {
       setState(() {
         index;
       });
+      print(index);
     } else {
       Navigator.pushReplacement(
           context, MaterialPageRoute(builder: (context) => Login()));
@@ -38,20 +39,16 @@ class _AboutScreen1State extends State<AboutScreen1> {
                 fontWeight: FontWeight.bold),
           ),
           SizedBox(height: 20),
-          Text(
-            'Enjoy it!',
-            style: TextStyle(
-              color: Colors.grey.shade700,
-              fontSize: 20,
-            ),
+          Container(
+            height: 5,
+            width: 100,
+            color: Colors.grey.shade700,
           ),
           SizedBox(height: 10),
-          Text(
-            '!',
-            style: TextStyle(
-              color: Colors.grey.shade700,
-              fontSize: 20,
-            ),
+          Container(
+            height: 5,
+            width: 250,
+            color: Colors.grey.shade700,
           ),
           SizedBox(height: 100),
         ],
@@ -148,13 +145,13 @@ class _AboutScreen1State extends State<AboutScreen1> {
                       padding: EdgeInsets.all(circleBorderWidth),
                       child: ClipOval(
                         child: Container(
-                          height: 200,
-                          width: 200,
+                          height: 170,
+                          width: 170,
                           color: Colors.white,
                           child: Image.asset(
                             'assets/clogo.png',
-                            width: 200.0,
-                            height: 200.0,
+                            // width: 200.0,
+                            // height: 200.0,
                             fit: BoxFit.contain,
                           ),
                         ),
