@@ -12,67 +12,113 @@ class _HomeScreenState extends State<HomeScreen> {
   List<CircularImages> _circularImages = [
     CircularImages(
       circulaImages:
-          "https://images.pexels.com/photos/9800864/pexels-photo-9800864.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+      "https://images.pexels.com/photos/9800864/pexels-photo-9800864.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
     ),
     CircularImages(
       circulaImages:
-          "https://images.pexels.com/photos/458766/pexels-photo-458766.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+      "https://images.pexels.com/photos/458766/pexels-photo-458766.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
     ),
     CircularImages(
       circulaImages:
-          "https://images.pexels.com/photos/1446161/pexels-photo-1446161.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+      "https://images.pexels.com/photos/1446161/pexels-photo-1446161.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
     ),
     CircularImages(
       circulaImages:
-          "https://images.pexels.com/photos/3221176/pexels-photo-3221176.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+      "https://images.pexels.com/photos/3221176/pexels-photo-3221176.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
     ),
     CircularImages(
       circulaImages:
-          "https://images.pexels.com/photos/3221176/pexels-photo-3221176.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+      "https://images.pexels.com/photos/3221176/pexels-photo-3221176.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
     ),
     CircularImages(
       circulaImages:
-          "https://images.pexels.com/photos/2328991/pexels-photo-2328991.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+      "https://images.pexels.com/photos/2328991/pexels-photo-2328991.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
     ),
     CircularImages(
       circulaImages:
-          "https://images.pexels.com/photos/2808556/pexels-photo-2808556.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+      "https://images.pexels.com/photos/2808556/pexels-photo-2808556.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
     ),
     CircularImages(
       circulaImages:
-          "https://images.pexels.com/photos/2286400/pexels-photo-2286400.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+      "https://images.pexels.com/photos/2286400/pexels-photo-2286400.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
     ),
   ];
+
   // First Slider Images
   int activeIndex = 0;
   List<FirstSlider> _sliderImages = [
     FirstSlider(
       sliderImages:
-          "https://images.pexels.com/photos/2286400/pexels-photo-2286400.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+      "https://images.pexels.com/photos/2286400/pexels-photo-2286400.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
     ),
     FirstSlider(
       sliderImages:
-          "https://images.pexels.com/photos/2808556/pexels-photo-2808556.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+      "https://images.pexels.com/photos/2808556/pexels-photo-2808556.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
     ),
     FirstSlider(
       sliderImages:
-          "https://images.pexels.com/photos/2131600/pexels-photo-2131600.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+      "https://images.pexels.com/photos/2131600/pexels-photo-2131600.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
     ),
     FirstSlider(
       sliderImages:
-          "https://images.pexels.com/photos/2328991/pexels-photo-2328991.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+      "https://images.pexels.com/photos/2328991/pexels-photo-2328991.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
     ),
     FirstSlider(
       sliderImages:
-          "https://images.pexels.com/photos/3385375/pexels-photo-3385375.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+      "https://images.pexels.com/photos/3385375/pexels-photo-3385375.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
     ),
     FirstSlider(
       sliderImages:
-          "https://images.pexels.com/photos/5673960/pexels-photo-5673960.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+      "https://images.pexels.com/photos/5673960/pexels-photo-5673960.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
     ),
     FirstSlider(
       sliderImages:
-          "https://images.pexels.com/photos/177332/pexels-photo-177332.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+      "https://images.pexels.com/photos/177332/pexels-photo-177332.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+    ),
+  ];
+
+  List<CardSliders> _cardSlider = [
+    CardSliders(
+        cardImage: "https://images.pexels.com/photos/2286400/pexels-photo-2286400.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+        title: "Lorem ipsum dolor sit amet",
+        subTitle: 'Lorem ipsum dolor sit amet,'
+    ),
+    CardSliders(
+        cardImage: "https://images.pexels.com/photos/2131600/pexels-photo-2131600.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+        title: "Lorem ipsum dolor sit amet",
+        subTitle: 'Lorem ipsum dolor sit amet,'
+    ),
+    CardSliders(
+        cardImage: "https://images.pexels.com/photos/2286400/pexels-photo-2286400.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+        title: "Lorem ipsum dolor sit amet",
+        subTitle: 'Lorem ipsum dolor sit amet,'
+    ),
+  ];
+
+  List<SmallCardSlider> _smallCardSlider = [
+    SmallCardSlider(
+      image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTh-EeDkS_vuHpoQMRozGr0ZnIxTVpcxOjmJA&usqp=CAU",
+      title: "Lorem Ipsum"
+    ),
+    SmallCardSlider(
+        image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTh-EeDkS_vuHpoQMRozGr0ZnIxTVpcxOjmJA&usqp=CAU",
+        title: "Lorem Ipsum"
+    ),
+    SmallCardSlider(
+        image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRFBvYZKrA_9zQPB710dzkzGKzwhnA2LoO2Tw&usqp=CAU",
+        title: "Lorem Ipsum"
+    ),
+    SmallCardSlider(
+        image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQBlXXWhj5BEmkQDY4RBqt8LmkNIY2AgKVoew&usqp=CAU",
+        title: "Lorem Ipsum"
+    ),
+    SmallCardSlider(
+        image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTh-EeDkS_vuHpoQMRozGr0ZnIxTVpcxOjmJA&usqp=CAU",
+        title: "Lorem Ipsum"
+    ),
+    SmallCardSlider(
+        image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRfTDqPFRd33j0QOqF3xgLSJYhadjVKxEl5pA&usqp=CAU",
+        title: "Lorem Ipsum"
     ),
   ];
 
@@ -124,7 +170,8 @@ class _HomeScreenState extends State<HomeScreen> {
               Container(
                 height: 50,
                 color: Colors.white,
-                //Custom AppBar
+
+                ///Custom AppBar
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
@@ -177,7 +224,8 @@ class _HomeScreenState extends State<HomeScreen> {
               Divider(
                 color: Colors.black,
               ),
-              // Circular Images
+
+              /// Circular Images
               Container(
                 height: 70,
                 width: double.infinity,
@@ -186,15 +234,17 @@ class _HomeScreenState extends State<HomeScreen> {
                   child: ListView.separated(
                     scrollDirection: Axis.horizontal,
                     itemCount: _circularImages.length,
-                    separatorBuilder: (context, _) => SizedBox(
-                      width: 10,
-                    ),
+                    separatorBuilder: (context, _) =>
+                        SizedBox(
+                          width: 10,
+                        ),
                     itemBuilder: (context, index) =>
                         _buildCircularImage(images: _circularImages[index]),
                   ),
                 ),
               ),
-              // First Slider
+
+              /// First Slider
               Container(
                 height: 300,
                 width: double.infinity,
@@ -204,9 +254,10 @@ class _HomeScreenState extends State<HomeScreen> {
                     autoPlay: true,
                     viewportFraction: 1,
                     enableInfiniteScroll: false,
-                    onPageChanged: (index, reason) => setState(() {
-                      activeIndex = index;
-                    }),
+                    onPageChanged: (index, reason) =>
+                        setState(() {
+                          activeIndex = index;
+                        }),
                   ),
                   itemCount: _sliderImages.length,
                   itemBuilder: (context, index, realIndex) {
@@ -218,65 +269,22 @@ class _HomeScreenState extends State<HomeScreen> {
               SizedBox(
                 height: 10,
               ),
+
+              /// indicator
               _buildIndicator(),
               SizedBox(
                 height: 10,
               ),
               Padding(
                 padding: const EdgeInsets.only(left: 40),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Column(
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Container(
-                          height: 200,
-                          width: 200,
-                          color: Colors.grey[300],
-                        ),
-                        SizedBox(height: 10),
-                        Container(
-                          height: 10,
-                          width: 180,
-                          color: Colors.grey,
-                        ),
-                        SizedBox(height: 10),
-                        Container(
-                          height: 5,
-                          width: 200,
-                          color: Colors.grey,
-                        ),
-                        SizedBox(height: 10),
-                        Container(
-                          height: 5,
-                          width: 120,
-                          color: Colors.grey,
-                        )
-                      ],
-                    ),
-                    SizedBox(
-                      width: 50,
-                    ),
-                    Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Container(
-                          height: 200,
-                          width: 120,
-                          color: Colors.grey[300],
-                        ),
-                        SizedBox(height: 10),
-                        Container(
-                          height: 5,
-                          width: 120,
-                          color: Colors.grey,
-                        )
-                      ],
-                    ),
-                  ],
+                child: Container(
+                  height: 250,
+                  child: ListView.separated(
+                    scrollDirection: Axis.horizontal,
+                    itemCount: _cardSlider.length,
+                    separatorBuilder: (context,_) => SizedBox(width: 10,),
+                    itemBuilder: (context, index) => buildCardList(items: _cardSlider[index]),
+                  ),
                 ),
               ),
               SizedBox(
@@ -289,6 +297,23 @@ class _HomeScreenState extends State<HomeScreen> {
     );
   }
 
+  Widget buildCardList({
+    @required CardSliders items,
+  }) => Container(
+      width: 300,
+    child: Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Expanded(
+          child: ClipRRect(borderRadius: BorderRadius.circular(10), child: Image.network(items.cardImage,fit: BoxFit.cover,)),
+        ),
+        SizedBox(height: 10,),
+        Text(items.title,style: TextStyle(fontSize: 20,color: Colors.black,fontWeight: FontWeight.bold),),
+        SizedBox(height: 4,),
+        Text(items.subTitle,style: TextStyle(fontSize: 18,color: Colors.black),),
+      ],
+    ),
+  );
   Widget buildImage({
     FirstSlider urlImage,
     int index,
@@ -305,15 +330,14 @@ class _HomeScreenState extends State<HomeScreen> {
       ),
     );
   }
-
   Widget _buildIndicator() => AnimatedSmoothIndicator(
-        activeIndex: activeIndex,
-        count: _sliderImages.length,
-        effect: SlideEffect(
-          dotHeight: 7,
-          dotWidth: 7,
-        ),
-      );
+    activeIndex: activeIndex,
+    count: _sliderImages.length,
+    effect: SlideEffect(
+      dotHeight: 7,
+      dotWidth: 7,
+    ),
+  );
 
   Widget _buildCircularImage({
     CircularImages images,
@@ -323,7 +347,7 @@ class _HomeScreenState extends State<HomeScreen> {
         height: 30.0,
         decoration: BoxDecoration(
           color: Colors.white,
-          borderRadius: BorderRadius.all(Radius.circular(50.0)),
+          borderRadius: BorderRadius.all(Radius.circular(50.0),),
         ),
         child: ClipOval(
           child: Image.network(
@@ -333,3 +357,10 @@ class _HomeScreenState extends State<HomeScreen> {
         ),
       );
 }
+
+
+
+
+
+
+

@@ -27,3 +27,14 @@ class CardSliders {
     @required this.subTitle,
   });
 }
+
+class SmallCardSlider{
+  final String image;
+  final String title;
+
+  SmallCardSlider({
+    this.image,
+    this.title,
+});
+
+}
