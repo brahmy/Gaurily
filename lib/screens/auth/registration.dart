@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:gaurily/home_screen.dart';
+import 'package:gaurily/HomeScreen.dart';
 
 class Registration extends StatefulWidget {
   @override
