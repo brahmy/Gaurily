@@ -28,13 +28,34 @@ class CardSliders {
   });
 }
 
-class SmallCardSlider{
+class SmallCardSlider {
   final String image;
   final String title;
 
   SmallCardSlider({
     this.image,
     this.title,
-});
+  });
+}
 
+class FourCard {
+  final String image;
+
+  FourCard({this.image});
+}
+
+class SecondSlider {
+  final String image;
+
+  SecondSlider({this.image});
+}
+
+class VerySmallCardSlider {
+  final String image;
+  final String title;
+
+  VerySmallCardSlider({
+    this.image,
+    this.title,
+  });
 }
