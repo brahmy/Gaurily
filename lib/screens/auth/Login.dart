@@ -4,6 +4,7 @@ import 'package:otp_text_field/otp_field.dart';
 import 'package:otp_text_field/otp_field_style.dart';
 import 'package:otp_text_field/style.dart';
 import 'package:pin_code_fields/pin_code_fields.dart';
+
 // import 'package:gaurily/screens/HomeCategoryTabs.dart';
 // import 'package:gaurily/screens/grid_screen.dart';
 
@@ -81,17 +82,15 @@ class _LoginState extends State<Login> {
               decoration: InputDecoration(
                   contentPadding: EdgeInsets.only(left: 35),
                   enabledBorder: OutlineInputBorder(
-                    borderSide:
-                        BorderSide(color: Colors.grey.shade700, width: 2),
+                    borderSide: BorderSide(color: Color(0xFF05014a), width: 2),
                     borderRadius: BorderRadius.circular(30),
                   ),
                   focusedBorder: OutlineInputBorder(
-                    borderSide:
-                        BorderSide(color: Colors.grey.shade700, width: 2),
+                    borderSide: BorderSide(color: Color(0xFF05014a), width: 2),
                     borderRadius: BorderRadius.circular(30),
                   ),
                   labelText: 'Mobile Number',
-                  labelStyle: TextStyle(color: Colors.grey.shade600)),
+                  labelStyle: TextStyle(color: Color(0xFF05014a))),
             ),
           ),
           Padding(
@@ -117,7 +116,7 @@ class _LoginState extends State<Login> {
           width: 330,
           decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(30),
-              border: Border.all(color: Colors.grey.shade600)),
+              border: Border.all(color: Color(0xFF05014a))),
           child: Padding(
             padding: const EdgeInsets.only(bottom: 8),
             child: OTPTextField(
@@ -125,12 +124,9 @@ class _LoginState extends State<Login> {
               textFieldAlignment: MainAxisAlignment.spaceAround,
               fieldStyle: FieldStyle.underline,
               otpFieldStyle:
-                  OtpFieldStyle(enabledBorderColor: Colors.grey.shade700),
+                  OtpFieldStyle(enabledBorderColor: Color(0xFF05014a)),
             ),
           ),
-        ),
-        SizedBox(
-          height: 5,
         ),
         Padding(
           padding: const EdgeInsets.only(right: 40),
@@ -168,6 +164,8 @@ class _LoginState extends State<Login> {
 
   @override
   Widget build(BuildContext context) {
+    final mediaQuery = MediaQuery.of(context);
+
     return Scaffold(
       backgroundColor: Colors.white,
       body: SafeArea(
@@ -175,7 +173,7 @@ class _LoginState extends State<Login> {
           child: Center(
             child: Column(
               children: [
-                SizedBox(height: 60),
+                SizedBox(height: mediaQuery.size.height * 0.06),
                 Stack(
                   alignment: Alignment.topCenter,
                   children: <Widget>[
@@ -183,7 +181,7 @@ class _LoginState extends State<Login> {
                       padding: EdgeInsets.only(top: circleRadius / 2.0),
                       child: Container(
                         //replace this Container with your Card
-                        height: 110.0,
+                        height: mediaQuery.size.height * 0.161,
                         decoration: BoxDecoration(
                             color: Colors.grey[100],
                             borderRadius: BorderRadius.only(
@@ -200,13 +198,13 @@ class _LoginState extends State<Login> {
                         padding: EdgeInsets.all(circleBorderWidth),
                         child: ClipOval(
                           child: Container(
-                            height: 200,
+                            /* height: 200,
                             width: 200,
-                            color: Colors.white,
+                            color: Colors.white,*/
                             child: Image.asset(
                               'assets/onlyLogo.png',
-                              width: 200.0,
-                              height: 200.0,
+                              /*width: 200.0,
+                              height: 200.0,*/
                               fit: BoxFit.contain,
                             ),
                           ),
@@ -217,19 +215,19 @@ class _LoginState extends State<Login> {
                 ),
                 Container(
                   color: Colors.grey[100],
-                  height: 700,
+                  height: mediaQuery.size.height * 0.58,
                   child: Column(
                     children: [
                       Padding(
-                        padding: const EdgeInsets.all(10.0),
+                        padding: const EdgeInsets.symmetric(
+                          horizontal: 10,
+                          vertical: 10,
+                        ),
                         child: Image.asset('assets/logoName.png'),
                       ),
-                      SizedBox(height: 80),
+                      SizedBox(height: mediaQuery.size.height * 0.08,),
                       _widgets[index1],
-                      SizedBox(
-                        height: 5,
-                      ),
-                      SizedBox(height: 40),
+                      SizedBox(height: mediaQuery.size.height * 0.04,),
                       Container(
                         height: 50,
                         width: 330,
@@ -247,10 +245,10 @@ class _LoginState extends State<Login> {
                           style: ElevatedButton.styleFrom(
                               shape: RoundedRectangleBorder(
                                   borderRadius: BorderRadius.circular(30)),
-                              primary: Colors.grey.shade700),
+                              primary: Color(0xFF05014a)),
                         ),
                       ),
-                      SizedBox(height: 15),
+                      SizedBox(height: mediaQuery.size.height * 0.005,),
                       TextButton(
                         onPressed: () {},
                         child: Text(

@@ -8,10 +8,6 @@ class AboutScreen1 extends StatefulWidget {
 }
 
 class _AboutScreen1State extends State<AboutScreen1> {
-  final double circleRadius = 180.0;
-
-  final double circleBorderWidth = 10.0;
-
   int index = 0;
 
   void _animteWidget() {
@@ -30,88 +26,90 @@ class _AboutScreen1State extends State<AboutScreen1> {
   List _animatedWidgets = [
     Container(
       child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Text(
-            'Welcome! Here is the App',
+            'Lorem Ipsum dolor sit amet',
             style: TextStyle(
                 color: Colors.grey.shade700,
                 fontSize: 20,
                 fontWeight: FontWeight.bold),
           ),
           SizedBox(height: 20),
-          Container(
-            height: 5,
-            width: 100,
-            color: Colors.grey.shade700,
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 20),
+            child: Text(
+              'Lorem ipsum dolor si amet, consetetur sadipscing elitr, sed',
+              style: TextStyle(
+                color: Colors.grey.shade700,
+                fontSize: 16,
+              ),
+            ),
           ),
-          SizedBox(height: 10),
-          Container(
-            height: 5,
-            width: 250,
-            color: Colors.grey.shade700,
-          ),
-          SizedBox(height: 100),
         ],
       ),
     ),
     Container(
       child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Container(
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(20),
-              color: Colors.grey.shade700,
-            ),
-            width: 250,
-            height: 30,
+          Text(
+            'Lorem Ipsum dolor sit amet',
+            style: TextStyle(
+                color: Colors.grey.shade700,
+                fontSize: 20,
+                fontWeight: FontWeight.bold),
           ),
           SizedBox(height: 20),
-          Container(
-            height: 5,
-            width: 200,
-            color: Colors.grey.shade700,
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 20),
+            child: Text(
+              'Lorem ipsum dolor si amet, consetetur sadipscing elitr, sed',
+              style: TextStyle(
+                color: Colors.grey.shade700,
+                fontSize: 16,
+              ),
+            ),
           ),
-          SizedBox(height: 10),
-          Container(
-            height: 5,
-            width: 150,
-            color: Colors.grey.shade700,
-          ),
-          SizedBox(height: 100),
+
         ],
       ),
     ),
     Container(
       child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Container(
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(20),
-              color: Colors.grey.shade700,
-            ),
-            width: 350,
-            height: 30,
+          Text(
+            'Lorem Ipsum dolor sit amet',
+            style: TextStyle(
+                color: Colors.grey.shade700,
+                fontSize: 20,
+                fontWeight: FontWeight.bold),
           ),
           SizedBox(height: 20),
-          Container(
-            height: 5,
-            width: 300,
-            color: Colors.grey.shade700,
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 20),
+            child: Text(
+              'Lorem ipsum dolor si amet, consetetur sadipscing elitr, sed',
+              style: TextStyle(
+                color: Colors.grey.shade700,
+                fontSize: 16,
+              ),
+            ),
           ),
-          SizedBox(height: 10),
-          Container(
-            height: 5,
-            width: 250,
-            color: Colors.grey.shade700,
-          ),
-          SizedBox(height: 100),
+
         ],
       ),
-    )
+    ),
   ];
 
   @override
   Widget build(BuildContext context) {
+    final mediaQuery = MediaQuery.of(context);
+
+    final double circleRadius = 180.0;
+    final double circleBorderWidth = 10.0;
+
     return Scaffold(
       backgroundColor: Colors.white,
       body: SafeArea(
@@ -119,7 +117,7 @@ class _AboutScreen1State extends State<AboutScreen1> {
           child: Column(
             children: [
               SizedBox(
-                height: 60,
+                height: mediaQuery.size.height * 0.06,
               ),
               Stack(
                 alignment: Alignment.topCenter,
@@ -128,7 +126,7 @@ class _AboutScreen1State extends State<AboutScreen1> {
                     padding: EdgeInsets.only(top: circleRadius / 2.0),
                     child: Container(
                       //replace this Container with your Card
-                      height: 100.0,
+                      height: mediaQuery.size.height * 0.135,
                       decoration: BoxDecoration(
                           color: Colors.grey[100],
                           borderRadius: BorderRadius.only(
@@ -145,9 +143,9 @@ class _AboutScreen1State extends State<AboutScreen1> {
                       padding: EdgeInsets.all(circleBorderWidth),
                       child: ClipOval(
                         child: Container(
-                          height: 170,
+                          /* height: 170,
                           width: 170,
-                          color: Colors.white,
+                          color: Colors.white,*/
                           child: Image.asset(
                             'assets/clogo.png',
                             // width: 200.0,
@@ -162,11 +160,11 @@ class _AboutScreen1State extends State<AboutScreen1> {
               ),
               Container(
                 color: Colors.grey[100],
-                height: 700,
+                height: mediaQuery.size.height * 0.65,
                 width: double.infinity,
                 child: Column(
                   children: [
-                    SizedBox(height: 200),
+                    SizedBox(height: mediaQuery.size.height * 0.35,),
                     AnimatedSwitcher(
                       duration: Duration(milliseconds: 2000),
                       transitionBuilder: (child, animation) =>
@@ -176,22 +174,26 @@ class _AboutScreen1State extends State<AboutScreen1> {
                       ),
                       child: _animatedWidgets[index],
                     ),
+                    SizedBox(height: mediaQuery.size.height * 0.1,),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [
                         GestureDetector(
-                          child: Container(
-                            height: 30,
-                            width: 80,
-                            decoration: BoxDecoration(
-                                border: Border.all(color: Colors.grey.shade800),
-                                borderRadius: BorderRadius.circular(20)),
-                            child: Center(
-                              child: Text(
-                                'Skip',
-                                style: TextStyle(
-                                    color: Colors.black, fontSize: 18),
-                              ),
+                          child: Center(
+                            child: Column(
+                              children: [
+                                Text(
+                                  'Skip',
+                                  style: TextStyle(
+                                      color: Colors.black, fontSize: 18),
+                                ),
+                                SizedBox(height: 4),
+                                Container(
+                                  height: 3,
+                                  width: 50,
+                                  color: Colors.black,
+                                )
+                              ],
                             ),
                           ),
                           onTap: () {
@@ -201,22 +203,26 @@ class _AboutScreen1State extends State<AboutScreen1> {
                                     builder: (context) => HomeScreen()));
                           },
                         ),
-                        SizedBox(
-                          width: 100,
-                        ),
+                        SizedBox(width: 100),
                         GestureDetector(
                           child: Container(
-                            height: 30,
-                            width: 80,
-                            decoration: BoxDecoration(
-                              color: Colors.grey.shade700,
-                              borderRadius: BorderRadius.circular(20),
-                            ),
                             child: Center(
-                              child: Text(
-                                'Next',
-                                style: TextStyle(
-                                    color: Colors.white, fontSize: 18),
+                              child: Column(
+                                children: [
+                                  Text(
+                                    'Next',
+                                    style: TextStyle(
+                                        color: Colors.black, fontSize: 18),
+                                  ),
+                                  SizedBox(
+                                    height: 4,
+                                  ),
+                                  Container(
+                                    height: 3,
+                                    width: 50,
+                                    color: Colors.black,
+                                  )
+                                ],
                               ),
                             ),
                           ),

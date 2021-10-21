@@ -13,12 +13,16 @@ class _RegistrationState extends State<Registration> {
 
   @override
   Widget build(BuildContext context) {
+
+    final mediaQuery = MediaQuery.of(context).size;
+
     return Scaffold(
       backgroundColor: Colors.white,
       body: SafeArea(
         child: SingleChildScrollView(
           child: Column(
             children: [
+              SizedBox(height: mediaQuery.height * 0.04,),
               Stack(
                 alignment: Alignment.topCenter,
                 children: <Widget>[
@@ -26,7 +30,7 @@ class _RegistrationState extends State<Registration> {
                     padding: EdgeInsets.only(top: circleRadius / 2.0),
                     child: Container(
                       //replace this Container with your Card
-                      height: 90.0,
+                      height: mediaQuery.height * 0.14,
                       decoration: BoxDecoration(
                           color: Colors.grey[100],
                           borderRadius: BorderRadius.only(
@@ -43,13 +47,13 @@ class _RegistrationState extends State<Registration> {
                       padding: EdgeInsets.all(circleBorderWidth),
                       child: ClipOval(
                         child: Container(
-                          height: 180,
-                          width: 180,
+                         /* height: 180,
+                          width: 180,*/
                           color: Colors.white,
                           child: Image.asset(
                             'assets/onlyLogo.png',
-                            width: 200.0,
-                            height: 200.0,
+                            /*width: 200.0,
+                            height: 200.0,*/
                             fit: BoxFit.contain,
                           ),
                         ),
@@ -59,7 +63,7 @@ class _RegistrationState extends State<Registration> {
                 ],
               ),
               Container(
-                height: 700,
+                height: mediaQuery.height * 0.65,
                 width: double.infinity,
                 color: Colors.grey.shade100,
                 child: Column(
@@ -69,7 +73,7 @@ class _RegistrationState extends State<Registration> {
                       width: 250,
                       child: Image.asset('assets/logoName.png'),
                     ),
-                    SizedBox(height: 80),
+                    SizedBox(height: mediaQuery.height * 0.08,),
                     Padding(
                       padding: EdgeInsets.symmetric(horizontal: 40),
                       child: Column(
@@ -82,20 +86,20 @@ class _RegistrationState extends State<Registration> {
                                   contentPadding: EdgeInsets.only(left: 35),
                                   enabledBorder: OutlineInputBorder(
                                     borderSide: BorderSide(
-                                        color: Colors.grey.shade700, width: 2),
+                                        color: Color(0xFF05014a), width: 2),
                                     borderRadius: BorderRadius.circular(30),
                                   ),
                                   focusedBorder: OutlineInputBorder(
                                     borderSide: BorderSide(
-                                        color: Colors.grey.shade700, width: 2),
+                                        color: Color(0xFF05014a), width: 2),
                                     borderRadius: BorderRadius.circular(30),
                                   ),
                                   labelText: 'First Name',
                                   labelStyle:
-                                      TextStyle(color: Colors.grey.shade600)),
+                                      TextStyle(color: Color(0xFF05014a))),
                             ),
                           ),
-                          SizedBox(height: 20),
+                          SizedBox(height: mediaQuery.height * 0.01,),
                           Container(
                             height: 45,
                             width: double.infinity,
@@ -104,20 +108,20 @@ class _RegistrationState extends State<Registration> {
                                   contentPadding: EdgeInsets.only(left: 35),
                                   enabledBorder: OutlineInputBorder(
                                     borderSide: BorderSide(
-                                        color: Colors.grey.shade700, width: 2),
+                                        color: Color(0xFF05014a), width: 2),
                                     borderRadius: BorderRadius.circular(30),
                                   ),
                                   focusedBorder: OutlineInputBorder(
                                     borderSide: BorderSide(
-                                        color: Colors.grey.shade700, width: 2),
+                                        color: Color(0xFF05014a), width: 2),
                                     borderRadius: BorderRadius.circular(30),
                                   ),
                                   labelText: 'Last Name',
                                   labelStyle:
-                                      TextStyle(color: Colors.grey.shade600)),
+                                      TextStyle(color: Color(0xFF05014a))),
                             ),
                           ),
-                          SizedBox(height: 20),
+                          SizedBox(height: mediaQuery.height * 0.01,),
                           Container(
                             height: 45,
                             width: double.infinity,
@@ -126,20 +130,20 @@ class _RegistrationState extends State<Registration> {
                                   contentPadding: EdgeInsets.only(left: 35),
                                   enabledBorder: OutlineInputBorder(
                                     borderSide: BorderSide(
-                                        color: Colors.grey.shade700, width: 2),
+                                        color: Color(0xFF05014a), width: 2),
                                     borderRadius: BorderRadius.circular(30),
                                   ),
                                   focusedBorder: OutlineInputBorder(
                                     borderSide: BorderSide(
-                                        color: Colors.grey.shade700, width: 2),
+                                        color: Color(0xFF05014a), width: 2),
                                     borderRadius: BorderRadius.circular(30),
                                   ),
                                   labelText: 'Gender',
                                   labelStyle:
-                                      TextStyle(color: Colors.grey.shade600)),
+                                      TextStyle(color: Color(0xFF05014a))),
                             ),
                           ),
-                          SizedBox(height: 20),
+                          SizedBox(height: mediaQuery.height * 0.01,),
                           Container(
                             height: 45,
                             width: double.infinity,
@@ -148,20 +152,20 @@ class _RegistrationState extends State<Registration> {
                                   contentPadding: EdgeInsets.only(left: 35),
                                   enabledBorder: OutlineInputBorder(
                                     borderSide: BorderSide(
-                                        color: Colors.grey.shade700, width: 2),
+                                        color: Color(0xFF05014a), width: 2),
                                     borderRadius: BorderRadius.circular(30),
                                   ),
                                   focusedBorder: OutlineInputBorder(
                                     borderSide: BorderSide(
-                                        color: Colors.grey.shade700, width: 2),
+                                        color: Color(0xFF05014a), width: 2),
                                     borderRadius: BorderRadius.circular(30),
                                   ),
                                   labelText: 'Email',
                                   labelStyle:
-                                      TextStyle(color: Colors.grey.shade600)),
+                                      TextStyle(color: Color(0xFF05014a))),
                             ),
                           ),
-                          SizedBox(height: 50),
+                          SizedBox(height: mediaQuery.height * 0.04,),
                           Padding(
                             padding: const EdgeInsets.symmetric(horizontal: 20),
                             child: Container(
@@ -185,7 +189,7 @@ class _RegistrationState extends State<Registration> {
                                     shape: RoundedRectangleBorder(
                                         borderRadius:
                                             BorderRadius.circular(30)),
-                                    primary: Colors.grey.shade700),
+                                    primary: Color(0xFF05014a)),
                               ),
                             ),
                           ),
