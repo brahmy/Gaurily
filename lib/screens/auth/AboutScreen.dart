@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:gaurily/HomeScreen.dart';
+import 'package:gaurily/BottomAppBarPages/HomeScreen.dart';
 import 'package:gaurily/screens/auth/Login.dart';
 
 class AboutScreen1 extends StatefulWidget {
@@ -10,11 +10,10 @@ class AboutScreen1 extends StatefulWidget {
 class _AboutScreen1State extends State<AboutScreen1> {
   int index = 0;
 
-  void _animteWidget() {
+  void _animateWidget() {
     if (index != 2) {
-      index += 1;
       setState(() {
-        index;
+        index += 1;
       });
       print(index);
     } else {
@@ -28,10 +27,17 @@ class _AboutScreen1State extends State<AboutScreen1> {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
+          Container(
+            height: 250,
+            child: Image.asset("assets/A1.png"),
+          ),
+          SizedBox(
+            height: 40,
+          ),
           Text(
             'Lorem Ipsum dolor sit amet',
             style: TextStyle(
-                color: Colors.grey.shade700,
+                color: Color(0xFFFCD3B6),
                 fontSize: 20,
                 fontWeight: FontWeight.bold),
           ),
@@ -41,7 +47,7 @@ class _AboutScreen1State extends State<AboutScreen1> {
             child: Text(
               'Lorem ipsum dolor si amet, consetetur sadipscing elitr, sed',
               style: TextStyle(
-                color: Colors.grey.shade700,
+                color: Color(0xFFFCD3B6),
                 fontSize: 16,
               ),
             ),
@@ -53,10 +59,17 @@ class _AboutScreen1State extends State<AboutScreen1> {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
+          Container(
+            height: 250,
+            child: Image.asset("assets/A2.png"),
+          ),
+          SizedBox(
+            height: 40,
+          ),
           Text(
             'Lorem Ipsum dolor sit amet',
             style: TextStyle(
-                color: Colors.grey.shade700,
+                color: Color(0xFF62D9B4),
                 fontSize: 20,
                 fontWeight: FontWeight.bold),
           ),
@@ -66,12 +79,11 @@ class _AboutScreen1State extends State<AboutScreen1> {
             child: Text(
               'Lorem ipsum dolor si amet, consetetur sadipscing elitr, sed',
               style: TextStyle(
-                color: Colors.grey.shade700,
+                color: Color(0xFF62D9B4),
                 fontSize: 16,
               ),
             ),
           ),
-
         ],
       ),
     ),
@@ -79,10 +91,17 @@ class _AboutScreen1State extends State<AboutScreen1> {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
+          Container(
+            height: 250,
+            child: Image.asset("assets/A3.png"),
+          ),
+          SizedBox(
+            height: 40,
+          ),
           Text(
             'Lorem Ipsum dolor sit amet',
             style: TextStyle(
-                color: Colors.grey.shade700,
+                color: Color(0xFFFDDDB7),
                 fontSize: 20,
                 fontWeight: FontWeight.bold),
           ),
@@ -92,12 +111,11 @@ class _AboutScreen1State extends State<AboutScreen1> {
             child: Text(
               'Lorem ipsum dolor si amet, consetetur sadipscing elitr, sed',
               style: TextStyle(
-                color: Colors.grey.shade700,
+                color: Color(0xFFFDDDB7),
                 fontSize: 16,
               ),
             ),
           ),
-
         ],
       ),
     ),
@@ -107,7 +125,7 @@ class _AboutScreen1State extends State<AboutScreen1> {
   Widget build(BuildContext context) {
     final mediaQuery = MediaQuery.of(context);
 
-    final double circleRadius = 180.0;
+    final double circleRadius = 160.0;
     final double circleBorderWidth = 10.0;
 
     return Scaffold(
@@ -126,12 +144,18 @@ class _AboutScreen1State extends State<AboutScreen1> {
                     padding: EdgeInsets.only(top: circleRadius / 2.0),
                     child: Container(
                       //replace this Container with your Card
-                      height: mediaQuery.size.height * 0.135,
+                      height: mediaQuery.size.height * 0.136,
                       decoration: BoxDecoration(
-                          color: Colors.grey[100],
+                          color: index == 0
+                              ? Colors.black
+                              : index == 1
+                                  ? Color(0xFF2D1812)
+                                  : index == 2
+                                      ? Color(0xFF292629)
+                                      : null,
                           borderRadius: BorderRadius.only(
-                              topLeft: Radius.circular(20),
-                              topRight: Radius.circular(20))),
+                              topLeft: Radius.circular(15),
+                              topRight: Radius.circular(15))),
                     ),
                   ),
                   Container(
@@ -147,7 +171,7 @@ class _AboutScreen1State extends State<AboutScreen1> {
                           width: 170,
                           color: Colors.white,*/
                           child: Image.asset(
-                            'assets/clogo.png',
+                            'assets/logo.png',
                             // width: 200.0,
                             // height: 200.0,
                             fit: BoxFit.contain,
@@ -159,12 +183,17 @@ class _AboutScreen1State extends State<AboutScreen1> {
                 ],
               ),
               Container(
-                color: Colors.grey[100],
-                height: mediaQuery.size.height * 0.65,
+                color: index == 0
+                    ? Colors.black
+                    : index == 1
+                        ? Color(0xFF2D1812)
+                        : index == 2
+                            ? Color(0xFF292629)
+                            : null,
+                height: mediaQuery.size.height * 0.653,
                 width: double.infinity,
                 child: Column(
                   children: [
-                    SizedBox(height: mediaQuery.size.height * 0.35,),
                     AnimatedSwitcher(
                       duration: Duration(milliseconds: 2000),
                       transitionBuilder: (child, animation) =>
@@ -174,7 +203,9 @@ class _AboutScreen1State extends State<AboutScreen1> {
                       ),
                       child: _animatedWidgets[index],
                     ),
-                    SizedBox(height: mediaQuery.size.height * 0.1,),
+                    SizedBox(
+                      height: mediaQuery.size.height * 0.05,
+                    ),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [
@@ -185,13 +216,13 @@ class _AboutScreen1State extends State<AboutScreen1> {
                                 Text(
                                   'Skip',
                                   style: TextStyle(
-                                      color: Colors.black, fontSize: 18),
+                                      color: Colors.white, fontSize: 18),
                                 ),
                                 SizedBox(height: 4),
                                 Container(
                                   height: 3,
                                   width: 50,
-                                  color: Colors.black,
+                                  color: Colors.white,
                                 )
                               ],
                             ),
@@ -212,7 +243,7 @@ class _AboutScreen1State extends State<AboutScreen1> {
                                   Text(
                                     'Next',
                                     style: TextStyle(
-                                        color: Colors.black, fontSize: 18),
+                                        color: Colors.white, fontSize: 18),
                                   ),
                                   SizedBox(
                                     height: 4,
@@ -220,13 +251,13 @@ class _AboutScreen1State extends State<AboutScreen1> {
                                   Container(
                                     height: 3,
                                     width: 50,
-                                    color: Colors.black,
+                                    color: Colors.white,
                                   )
                                 ],
                               ),
                             ),
                           ),
-                          onTap: _animteWidget,
+                          onTap: _animateWidget,
                         ),
                       ],
                     )

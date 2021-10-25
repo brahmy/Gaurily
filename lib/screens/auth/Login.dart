@@ -173,61 +173,18 @@ class _LoginState extends State<Login> {
           child: Center(
             child: Column(
               children: [
-                SizedBox(height: mediaQuery.size.height * 0.06),
-                Stack(
-                  alignment: Alignment.topCenter,
-                  children: <Widget>[
-                    Padding(
-                      padding: EdgeInsets.only(top: circleRadius / 2.0),
-                      child: Container(
-                        //replace this Container with your Card
-                        height: mediaQuery.size.height * 0.161,
-                        decoration: BoxDecoration(
-                            color: Colors.grey[100],
-                            borderRadius: BorderRadius.only(
-                                topLeft: Radius.circular(20),
-                                topRight: Radius.circular(20))),
-                      ),
-                    ),
-                    Container(
-                      width: circleRadius,
-                      height: circleRadius,
-                      decoration: ShapeDecoration(
-                          shape: CircleBorder(), color: Colors.white),
-                      child: Padding(
-                        padding: EdgeInsets.all(circleBorderWidth),
-                        child: ClipOval(
-                          child: Container(
-                            /* height: 200,
-                            width: 200,
-                            color: Colors.white,*/
-                            child: Image.asset(
-                              'assets/onlyLogo.png',
-                              /*width: 200.0,
-                              height: 200.0,*/
-                              fit: BoxFit.contain,
-                            ),
-                          ),
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
+                SizedBox(height: mediaQuery.size.height * 0.12),
                 Container(
-                  color: Colors.grey[100],
-                  height: mediaQuery.size.height * 0.58,
                   child: Column(
                     children: [
-                      Padding(
-                        padding: const EdgeInsets.symmetric(
-                          horizontal: 10,
-                          vertical: 10,
-                        ),
-                        child: Image.asset('assets/logoName.png'),
+                      Image.asset("assets/loginlogo.png"),
+                      SizedBox(
+                        height: mediaQuery.size.height * 0.08,
                       ),
-                      SizedBox(height: mediaQuery.size.height * 0.08,),
                       _widgets[index1],
-                      SizedBox(height: mediaQuery.size.height * 0.04,),
+                      SizedBox(
+                        height: mediaQuery.size.height * 0.04,
+                      ),
                       Container(
                         height: 50,
                         width: 330,
@@ -248,7 +205,9 @@ class _LoginState extends State<Login> {
                               primary: Color(0xFF05014a)),
                         ),
                       ),
-                      SizedBox(height: mediaQuery.size.height * 0.005,),
+                      SizedBox(
+                        height: mediaQuery.size.height * 0.005,
+                      ),
                       TextButton(
                         onPressed: () {},
                         child: Text(

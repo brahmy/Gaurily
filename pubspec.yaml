@@ -55,6 +55,12 @@ flutter:
     - assets/clogo.png
     - assets/onlyLogo.png
     - assets/logoName.png
+    - assets/A1.png
+    - assets/A2.png
+    - assets/A3.png
+    - assets/c1.png
+    - assets/loginlogo.png
+    - assets/rImage.png
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see

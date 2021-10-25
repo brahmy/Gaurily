@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 
 class CircularImages {
-  final String circulaImages;
+  final String circularImages;
+  final String title;
 
   CircularImages({
-    @required this.circulaImages,
+    @required this.circularImages,
+    @required this.title,
   });
 }
 
