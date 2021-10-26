@@ -10,17 +10,22 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
-  int currentTab = 0;
+
+  int _currentTab = 0;
+
   final List<Widget> _screens = [
     HomeScreen(),
     CategoryScreen(),
     BagScreen(),
     ProfileScreen(),
   ];
-
-  final PageStorageBucket _bucket = PageStorageBucket();
-  Widget _currentScreen = HomeScreen();
-
+  void initState(){
+    super.initState();
+    setState(() {
+      _currentScreen = _screens[_currentTab];
+    });
+  }
+  Widget _currentScreen;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -37,8 +42,8 @@ class _HomeState extends State<Home> {
                 height: 40,
                 onPressed: (){
                   setState(() {
-                    _currentScreen = HomeScreen();
-                    currentTab = 0;
+                    _currentTab = 0;
+                    _currentScreen = _screens[_currentTab];
                   });
                 },
                 child: Column(
@@ -46,13 +51,13 @@ class _HomeState extends State<Home> {
                   children: [
                     Icon(
                       Icons.home,
-                      color: currentTab == 0 ? Colors.blue : Colors.grey,
+                      color: _currentTab == 0 ? Colors.blue : Colors.grey,
                       size: 35,
                     ),
                     Text(
                       'Home',
                       style: TextStyle(
-                        color: currentTab == 0 ? Colors.blue : Colors.grey,
+                        color:_currentTab == 0 ? Colors.blue : Colors.grey,
                       ),
                     )
                   ],
@@ -62,8 +67,8 @@ class _HomeState extends State<Home> {
                 height: 40,
                 onPressed: (){
                   setState(() {
-                    _currentScreen = CategoryScreen();
-                    currentTab = 1;
+                    _currentTab = 1;
+                    _currentScreen = _screens[_currentTab];
                   });
                 },
                 child: Column(
@@ -71,13 +76,13 @@ class _HomeState extends State<Home> {
                   children: [
                     Icon(
                       Icons.dashboard,
-                      color: currentTab == 1 ? Colors.blue : Colors.grey,
+                      color: _currentTab == 1 ? Colors.blue : Colors.grey,
                       size: 35,
                     ),
                     Text(
                       'Category',
                       style: TextStyle(
-                        color: currentTab == 1 ? Colors.blue : Colors.grey,
+                        color: _currentTab == 1 ? Colors.blue : Colors.grey,
                       ),
                     )
                   ],
@@ -87,8 +92,8 @@ class _HomeState extends State<Home> {
                 height: 40,
                 onPressed: (){
                   setState(() {
-                    _currentScreen = BagScreen();
-                    currentTab = 2;
+                    _currentTab = 2;
+                    _currentScreen = _screens[_currentTab];
                   });
                 },
                 child: Column(
@@ -96,13 +101,13 @@ class _HomeState extends State<Home> {
                   children: [
                     Icon(
                       Icons.shopping_bag,
-                      color: currentTab == 2 ? Colors.blue : Colors.grey,
+                      color: _currentTab == 2 ? Colors.blue : Colors.grey,
                       size: 35,
                     ),
                     Text(
                       'Bag',
                       style: TextStyle(
-                        color: currentTab == 2 ? Colors.blue : Colors.grey,
+                        color: _currentTab == 2 ? Colors.blue : Colors.grey,
                       ),
                     )
                   ],
@@ -112,8 +117,8 @@ class _HomeState extends State<Home> {
                 height: 40,
                 onPressed: (){
                   setState(() {
-                    _currentScreen = ProfileScreen();
-                    currentTab = 3;
+                    _currentTab = 3;
+                    _currentScreen = _screens[_currentTab];
                   });
                 },
                 child: Column(
@@ -121,13 +126,13 @@ class _HomeState extends State<Home> {
                   children: [
                     Icon(
                       Icons.person,
-                      color: currentTab == 3 ? Colors.blue : Colors.grey,
+                      color: _currentTab == 3 ? Colors.blue : Colors.grey,
                       size: 35,
                     ),
                     Text(
                       'Person',
                       style: TextStyle(
-                        color: currentTab == 3 ? Colors.blue : Colors.grey,
+                        color: _currentTab == 3 ? Colors.blue : Colors.grey,
                       ),
                     )
                   ],
@@ -202,10 +207,7 @@ class _HomeState extends State<Home> {
         ),
       ),
       body: Container(
-        child: PageStorage(
           child: _currentScreen,
-          bucket: _bucket,
-        ),
       ),
     );
   }

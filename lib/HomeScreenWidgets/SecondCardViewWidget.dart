@@ -1,50 +1,60 @@
-
 import 'package:flutter/material.dart';
+import 'package:gaurily/models/ItemListScreenModel.dart';
+import 'package:gaurily/screens/ItemsListScreen.dart';
 import '/models/HomeScreenModel.dart';
 
 class SecondCardViewWidget extends StatelessWidget {
-
   List<SmallCardSlider> _smallCardSlider = [
     SmallCardSlider(
         image:
-        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTh-EeDkS_vuHpoQMRozGr0ZnIxTVpcxOjmJA&usqp=CAU",
+            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTh-EeDkS_vuHpoQMRozGr0ZnIxTVpcxOjmJA&usqp=CAU",
         title: "Lorem Ipsum"),
     SmallCardSlider(
         image:
-        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTh-EeDkS_vuHpoQMRozGr0ZnIxTVpcxOjmJA&usqp=CAU",
+            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTh-EeDkS_vuHpoQMRozGr0ZnIxTVpcxOjmJA&usqp=CAU",
         title: "Lorem Ipsum"),
     SmallCardSlider(
         image:
-        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRFBvYZKrA_9zQPB710dzkzGKzwhnA2LoO2Tw&usqp=CAU",
+            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRFBvYZKrA_9zQPB710dzkzGKzwhnA2LoO2Tw&usqp=CAU",
         title: "Lorem Ipsum"),
     SmallCardSlider(
         image:
-        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQBlXXWhj5BEmkQDY4RBqt8LmkNIY2AgKVoew&usqp=CAU",
+            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQBlXXWhj5BEmkQDY4RBqt8LmkNIY2AgKVoew&usqp=CAU",
         title: "Lorem Ipsum"),
     SmallCardSlider(
         image:
-        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTh-EeDkS_vuHpoQMRozGr0ZnIxTVpcxOjmJA&usqp=CAU",
+            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTh-EeDkS_vuHpoQMRozGr0ZnIxTVpcxOjmJA&usqp=CAU",
         title: "Lorem Ipsum"),
     SmallCardSlider(
         image:
-        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRfTDqPFRd33j0QOqF3xgLSJYhadjVKxEl5pA&usqp=CAU",
+            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRfTDqPFRd33j0QOqF3xgLSJYhadjVKxEl5pA&usqp=CAU",
         title: "Lorem Ipsum"),
   ];
 
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.only(left: 40),
-      child: Container(
-        height: 150,
-        child: ListView.separated(
-          scrollDirection: Axis.horizontal,
-          itemCount: _smallCardSlider.length,
-          separatorBuilder: (context, _) => SizedBox(
-            width: 20,
+      padding: EdgeInsets.only(left: 30),
+      child: GestureDetector(
+        onTap: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => ItemListScreen(),
+            ),
+          );
+        },
+        child: Container(
+          height: 150,
+          child: ListView.separated(
+            scrollDirection: Axis.horizontal,
+            itemCount: _smallCardSlider.length,
+            separatorBuilder: (context, _) => SizedBox(
+              width: 20,
+            ),
+            itemBuilder: (context, index) =>
+                buildSmallCard(items: _smallCardSlider[index]),
           ),
-          itemBuilder: (context, index) =>
-              buildSmallCard(items: _smallCardSlider[index]),
         ),
       ),
     );
@@ -77,5 +87,4 @@ class SecondCardViewWidget extends StatelessWidget {
           ],
         ),
       );
-
 }

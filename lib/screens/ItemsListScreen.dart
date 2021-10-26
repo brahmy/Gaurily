@@ -1,6 +1,6 @@
 import "package:flutter/material.dart";
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
-import 'package:gaurily/models/ItemListScreenModel.dart';
+import '/models/ItemListScreenModel.dart';
 
 class ItemListScreen extends StatefulWidget {
   @override
@@ -12,65 +12,65 @@ class _ItemListScreenState extends State<ItemListScreen> {
     ItemListScreenModel(
       image:
           "https://images.pexels.com/photos/9959639/pexels-photo-9959639.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
-      title: 'Lorem ipsum dolor sit amet',
-      head: 'Lorem ipsum',
-      subTitle: 'Lorem ipsum dolor',
+      title: 'Puffed Marinar Chain',
+      head: 'Puffed Marinar Chain',
+      subTitle: 'Puffed Marinar Chain',
       isSelected: false,
     ),
     ItemListScreenModel(
       image:
           "https://images.pexels.com/photos/9959638/pexels-photo-9959638.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
-      title: 'Lorem ipsum dolor sit amet',
-      head: 'Lorem ipsum',
-      subTitle: 'Lorem ipsum dolor',
+      title: 'Ball Chain',
+      head: 'Ball Chain',
+      subTitle: 'Ball Chain',
       isSelected: false,
     ),
     ItemListScreenModel(
       image:
           "https://images.pexels.com/photos/9960172/pexels-photo-9960172.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
-      title: 'Lorem ipsum dolor sit amet',
-      head: 'Lorem ipsum',
-      subTitle: 'Lorem ipsum dolor',
+      title: 'Cable Chain',
+      head: 'Cable Chain',
+      subTitle: 'Cable Chain',
       isSelected: false,
     ),
     ItemListScreenModel(
       image:
           "https://images.pexels.com/photos/9884302/pexels-photo-9884302.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
-      title: 'Lorem ipsum dolor sit amet',
-      head: 'Lorem ipsum',
-      subTitle: 'Lorem ipsum dolor',
+      title: 'Cub Chain',
+      head: 'Cub Chain',
+      subTitle: 'Cub Chain',
       isSelected: false,
     ),
     ItemListScreenModel(
       image:
           "https://images.pexels.com/photos/3536991/pexels-photo-3536991.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
-      title: 'Lorem ipsum dolor sit amet',
-      head: 'Lorem ipsum',
-      subTitle: 'Lorem ipsum dolor',
+      title: 'Figaro Chain',
+      head: 'Figaro Chain',
+      subTitle: 'Figaro Chain',
       isSelected: false,
     ),
     ItemListScreenModel(
       image:
       "https://images.pexels.com/photos/4241706/pexels-photo-4241706.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
-      title: 'Lorem ipsum dolor sit amet',
-      head: 'Lorem ipsum',
-      subTitle: 'Lorem ipsum dolor',
+      title: 'Anchor/Marinar Chain',
+      head: 'Anchor/Marinar Chain',
+      subTitle: 'Anchor/Marinar Chain',
       isSelected: false,
     ),
     ItemListScreenModel(
       image:
       "https://images.pexels.com/photos/1028927/pexels-photo-1028927.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
-      title: 'Lorem ipsum dolor sit amet',
-      head: 'Lorem ipsum',
-      subTitle: 'Lorem ipsum dolor',
+      title: 'Rope Chan',
+      head: 'Rope Chan',
+      subTitle: 'Rope Chan',
       isSelected: false,
     ),
     ItemListScreenModel(
       image:
       "https://images.pexels.com/photos/1454172/pexels-photo-1454172.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
-      title: 'Lorem ipsum dolor sit amet',
-      head: 'Lorem ipsum',
-      subTitle: 'Lorem ipsum dolor',
+      title: 'Snake Chain',
+      head: 'Snake Chain',
+      subTitle: 'Snake Chain',
       isSelected: false,
     ),
   ];

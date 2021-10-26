@@ -1,7 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:gaurily/BottomAppBarPages/CategoryScreen.dart';
+import 'package:gaurily/Home.dart';
 import '../models/HomeScreenModel.dart';
 
-class CircularImagesWidget extends StatelessWidget {
+class CircularImagesWidget extends StatefulWidget {
+  @override
+  State<CircularImagesWidget> createState() => _CircularImagesWidgetState();
+}
+
+class _CircularImagesWidgetState extends State<CircularImagesWidget> {
+  int currentIndex = 1;
   List<CircularImages> _circularImages = [
     CircularImages(
       circularImages:

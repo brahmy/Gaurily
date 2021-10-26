@@ -1,5 +1,6 @@
 
 import 'package:flutter/material.dart';
+import 'package:gaurily/screens/ItemsListScreen.dart';
 import '/models/HomeScreenModel.dart';
 
 
@@ -26,17 +27,27 @@ class FirstCardViewWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return  Padding(
-      padding: const EdgeInsets.only(left: 40),
-      child: Container(
-        height: 250,
-        child: ListView.separated(
-          scrollDirection: Axis.horizontal,
-          itemCount: _cardSlider.length,
-          separatorBuilder: (context, _) => SizedBox(
-            width: 10,
+      padding: const EdgeInsets.only(left: 30),
+      child: GestureDetector(
+        onTap: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => ItemListScreen(),
+            ),
+          );
+        },
+        child: Container(
+          height: 250,
+          child: ListView.separated(
+            scrollDirection: Axis.horizontal,
+            itemCount: _cardSlider.length,
+            separatorBuilder: (context, _) => SizedBox(
+              width: 10,
+            ),
+            itemBuilder: (context, index) =>
+                buildCardList(items: _cardSlider[index]),
           ),
-          itemBuilder: (context, index) =>
-              buildCardList(items: _cardSlider[index]),
         ),
       ),
     );

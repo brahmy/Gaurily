@@ -1,5 +1,6 @@
 
 import 'package:flutter/material.dart';
+import 'package:gaurily/screens/ItemsListScreen.dart';
 import '/models/HomeScreenModel.dart';
 
 class ThirdCardViewWidget extends StatelessWidget {
@@ -41,14 +42,24 @@ class ThirdCardViewWidget extends StatelessWidget {
       padding: EdgeInsets.only(left: 20),
       child: Container(
         height: 100,
-        child: ListView.separated(
-          scrollDirection: Axis.horizontal,
-          itemCount: _verySmallCardSlider.length,
-          separatorBuilder: (context, _) => SizedBox(
-            width: 20,
+        child: GestureDetector(
+          onTap: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => ItemListScreen(),
+              ),
+            );
+          },
+          child: ListView.separated(
+            scrollDirection: Axis.horizontal,
+            itemCount: _verySmallCardSlider.length,
+            separatorBuilder: (context, _) => SizedBox(
+              width: 20,
+            ),
+            itemBuilder: (context, index) =>
+                buildVerySmallCard(items: _verySmallCardSlider[index]),
           ),
-          itemBuilder: (context, index) =>
-              buildVerySmallCard(items: _verySmallCardSlider[index]),
         ),
       ),
     );

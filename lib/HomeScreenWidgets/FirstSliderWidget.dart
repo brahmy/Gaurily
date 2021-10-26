@@ -62,6 +62,7 @@ class _FirstSliderWidgetState extends State<FirstSliderWidget> {
               onPageChanged: (index, reason) => setState(() {
                  activeIndex = index;
               }),
+
             ),
             itemCount: _sliderImages.length,
             itemBuilder: (context, index, realIndex) {
@@ -81,7 +82,7 @@ class _FirstSliderWidgetState extends State<FirstSliderWidget> {
     int index,
   }) {
     return Container(
-      margin: EdgeInsets.symmetric(horizontal: 5),
+      margin: EdgeInsets.symmetric(horizontal: 1),
       width: double.infinity,
       child: ClipRRect(
         borderRadius: BorderRadius.circular(10),
