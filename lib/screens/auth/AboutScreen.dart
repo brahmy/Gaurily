@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:gaurily/BottomAppBarPages/HomeScreen.dart';
+import 'package:gaurily/screens/BottomAppBarScreens/HomeScreen.dart';
 import 'package:gaurily/screens/auth/Login.dart';
 
 class AboutScreen1 extends StatefulWidget {

@@ -1,48 +1,46 @@
-
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
+import 'package:gaurily/screens/ProductDetailScreen.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 import '../models/HomeScreenModel.dart';
 
 class FirstSliderWidget extends StatefulWidget {
-
   @override
   State<FirstSliderWidget> createState() => _FirstSliderWidgetState();
 }
 
 class _FirstSliderWidgetState extends State<FirstSliderWidget> {
-
   var activeIndex = 0;
 
   List<FirstSlider> _sliderImages = [
     FirstSlider(
       sliderImages:
-      "https://images.pexels.com/photos/2286400/pexels-photo-2286400.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+          "https://images.pexels.com/photos/2286400/pexels-photo-2286400.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
     ),
     FirstSlider(
       sliderImages:
-      "https://images.pexels.com/photos/2808556/pexels-photo-2808556.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+          "https://images.pexels.com/photos/2808556/pexels-photo-2808556.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
     ),
     FirstSlider(
       sliderImages:
-      "https://images.pexels.com/photos/2131600/pexels-photo-2131600.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+          "https://images.pexels.com/photos/2131600/pexels-photo-2131600.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
     ),
     FirstSlider(
       sliderImages:
-      "https://images.pexels.com/photos/2328991/pexels-photo-2328991.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+          "https://images.pexels.com/photos/2328991/pexels-photo-2328991.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
     ),
     FirstSlider(
       sliderImages:
-      "https://images.pexels.com/photos/3385375/pexels-photo-3385375.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+          "https://images.pexels.com/photos/3385375/pexels-photo-3385375.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
     ),
     FirstSlider(
       sliderImages:
-      "https://images.pexels.com/photos/5673960/pexels-photo-5673960.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+          "https://images.pexels.com/photos/5673960/pexels-photo-5673960.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
     ),
     FirstSlider(
       sliderImages:
-      "https://images.pexels.com/photos/177332/pexels-photo-177332.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+          "https://images.pexels.com/photos/177332/pexels-photo-177332.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
     ),
   ];
 
@@ -60,9 +58,8 @@ class _FirstSliderWidgetState extends State<FirstSliderWidget> {
               viewportFraction: 1,
               enableInfiniteScroll: false,
               onPageChanged: (index, reason) => setState(() {
-                 activeIndex = index;
+                activeIndex = index;
               }),
-
             ),
             itemCount: _sliderImages.length,
             itemBuilder: (context, index, realIndex) {
@@ -81,25 +78,35 @@ class _FirstSliderWidgetState extends State<FirstSliderWidget> {
     FirstSlider urlImage,
     int index,
   }) {
-    return Container(
-      margin: EdgeInsets.symmetric(horizontal: 1),
-      width: double.infinity,
-      child: ClipRRect(
-        borderRadius: BorderRadius.circular(10),
-        child: Image.network(
-          urlImage.sliderImages,
-          fit: BoxFit.fill,
+    return GestureDetector(
+      onTap: () {
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => ProductDetailScreen(),
+          ),
+        );
+      },
+      child: Container(
+        margin: EdgeInsets.symmetric(horizontal: 1),
+        width: double.infinity,
+        child: ClipRRect(
+          borderRadius: BorderRadius.circular(10),
+          child: Image.network(
+            urlImage.sliderImages,
+            fit: BoxFit.fill,
+          ),
         ),
       ),
     );
   }
-  Widget _firstSliderIndicator() => AnimatedSmoothIndicator(
-    activeIndex: activeIndex,
-    count: _sliderImages.length,
-    effect: SlideEffect(
-      dotHeight: 7,
-      dotWidth: 7,
-    ),
-  );
 
+  Widget _firstSliderIndicator() => AnimatedSmoothIndicator(
+        activeIndex: activeIndex,
+        count: _sliderImages.length,
+        effect: SlideEffect(
+          dotHeight: 7,
+          dotWidth: 7,
+        ),
+      );
 }

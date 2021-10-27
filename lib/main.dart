@@ -1,7 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:gaurily/BottomAppBarPages/HomeScreen.dart';
-import 'package:gaurily/screens/auth/AboutScreen.dart';
-import 'package:gaurily/screens/auth/SplashScreen.dart';
 
 import 'Home.dart';
 

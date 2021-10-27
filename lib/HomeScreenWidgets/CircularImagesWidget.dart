@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:gaurily/BottomAppBarPages/CategoryScreen.dart';
 import 'package:gaurily/Home.dart';
 import '../models/HomeScreenModel.dart';
 

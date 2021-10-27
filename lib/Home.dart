@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import './BottomAppBarPages/HomeScreen.dart';
-import './BottomAppBarPages/CategoryScreen.dart';
-import './BottomAppBarPages/BagScreen.dart';
-import './BottomAppBarPages/ProfileScreen.dart';
+import 'package:gaurily/screens/BottomAppBarScreens/BagScreen.dart';
+import 'package:gaurily/screens/BottomAppBarScreens/CategoryScreen.dart';
+import 'package:gaurily/screens/BottomAppBarScreens/HomeScreen.dart';
+import 'package:gaurily/screens/BottomAppBarScreens/ProfileScreen.dart';
 
 class Home extends StatefulWidget {
   @override

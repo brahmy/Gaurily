@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:gaurily/models/CategoryModel.dart';
 import '/screens/ItemsListScreen.dart';
-import '../models/CategoryModel.dart';
 
 class CategoryScreen extends StatefulWidget {
   @override

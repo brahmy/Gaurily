@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:gaurily/HomeScreenWidgets/CircularImagesWidget.dart';
 
 import '/HomeScreenWidgets/SecondSliderWidget.dart';
 import '/HomeScreenWidgets/ThirdCardViewWidget.dart';
 import '/HomeScreenWidgets/GridViewWidget.dart';
-import '../HomeScreenWidgets/CircularImagesWidget.dart';
 import '/HomeScreenWidgets/SecondCardViewWidget.dart';
 import '/HomeScreenWidgets/FirstCardViewWidget.dart';
 import '/HomeScreenWidgets/FirstSliderWidget.dart';
