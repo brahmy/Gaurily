@@ -17,78 +17,79 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
 
-    Widget title = Padding(
-      padding: const EdgeInsets.only(left: 30),
-      child: Text(
-        'Lorem Ipsum Dolor Sit Amet'.toUpperCase(),
-        style: TextStyle(
-          fontSize: 22,
-          fontWeight: FontWeight.bold,
-        ),
+    Widget title = Text(
+      'Lorem Ipsum Dolor Sit Amet'.toUpperCase(),
+      style: TextStyle(
+        fontSize: 22,
+        fontWeight: FontWeight.bold,
+        fontFamily: 'Poppins'
       ),
     );
 
     return Container(
       child: SingleChildScrollView(
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            /// Circular Images
-            CircularImagesWidget(),
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 10),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              /// Circular Images
+              CircularImagesWidget(),
 
-            /// First Slider
-            FirstSliderWidget(),
-            SizedBox(
-              height: 10,
-            ),
-            title,
-            SizedBox(
-              height: 10,
-            ),
-            /// Second Card View
-            SecondCardViewWidget(),
-            SizedBox(
-              height: 20,
-            ),
-           title,
-            SizedBox(
-              height: 10,
-            ),
+              /// First Slider
+              FirstSliderWidget(),
+              SizedBox(
+                height: 10,
+              ),
+              title,
+              SizedBox(
+                height: 10,
+              ),
+              /// Second Card View
+              SecondCardViewWidget(),
+              SizedBox(
+                height: 20,
+              ),
+             title,
+              SizedBox(
+                height: 10,
+              ),
 
-            /// First Card View
-            FirstCardViewWidget(),
-            SizedBox(
-              height: 20,
-            ),
-            title,
-            SizedBox(
-              height: 10,
-            ),
-            /// Second Card View
-            SecondCardViewWidget(),
-            SizedBox(
-              height: 10,
-            ),
-            title,
-            /// GridView
-            GridViewWidget(),
+              /// First Card View
+              FirstCardViewWidget(),
+              SizedBox(
+                height: 20,
+              ),
+              title,
+              SizedBox(
+                height: 10,
+              ),
+              /// Second Card View
+              SecondCardViewWidget(),
+              SizedBox(
+                height: 10,
+              ),
+              title,
+              /// GridView
+              GridViewWidget(),
 
-            /// Second Slider
-            title,
-            SizedBox(
-              height: 10,
-            ),
-            SecondSliderWidget(),
-            SizedBox(
-              height: 10,
-            ),
+              /// Second Slider
+              title,
+              SizedBox(
+                height: 10,
+              ),
+              SecondSliderWidget(),
+              SizedBox(
+                height: 10,
+              ),
 
-            /// ThirdCardView
-            ThirdCardViewWidget(),
-            SizedBox(
-              height: 50,
-            ),
-          ],
+              /// ThirdCardView
+              ThirdCardViewWidget(),
+              SizedBox(
+                height: 10,
+              ),
+            ],
+          ),
         ),
       ),
     );

@@ -33,28 +33,25 @@ class SecondCardViewWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: EdgeInsets.only(left: 30),
-      child: GestureDetector(
-        onTap: () {
-          Navigator.push(
-            context,
-            MaterialPageRoute(
-              builder: (context) => ItemListScreen(),
-            ),
-          );
-        },
-        child: Container(
-          height: 150,
-          child: ListView.separated(
-            scrollDirection: Axis.horizontal,
-            itemCount: _smallCardSlider.length,
-            separatorBuilder: (context, _) => SizedBox(
-              width: 20,
-            ),
-            itemBuilder: (context, index) =>
-                buildSmallCard(items: _smallCardSlider[index]),
+    return GestureDetector(
+      onTap: () {
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => ItemListScreen(),
           ),
+        );
+      },
+      child: Container(
+        height: 150,
+        child: ListView.separated(
+          scrollDirection: Axis.horizontal,
+          itemCount: _smallCardSlider.length,
+          separatorBuilder: (context, _) => SizedBox(
+            width: 20,
+          ),
+          itemBuilder: (context, index) =>
+              buildSmallCard(items: _smallCardSlider[index]),
         ),
       ),
     );
@@ -69,12 +66,9 @@ class SecondCardViewWidget extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Expanded(
-              child: ClipRRect(
-                borderRadius: BorderRadius.circular(10),
-                child: Image.network(
-                  items.image,
-                  fit: BoxFit.cover,
-                ),
+              child: Image.network(
+                items.image,
+                fit: BoxFit.cover,
               ),
             ),
             SizedBox(
@@ -82,7 +76,11 @@ class SecondCardViewWidget extends StatelessWidget {
             ),
             Text(
               items.title,
-              style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+              style: TextStyle(
+                fontSize: 16,
+                fontWeight: FontWeight.bold,
+                fontFamily: 'Poppins',
+              ),
             )
           ],
         ),

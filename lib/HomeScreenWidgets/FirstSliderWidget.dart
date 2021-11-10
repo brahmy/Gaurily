@@ -90,12 +90,9 @@ class _FirstSliderWidgetState extends State<FirstSliderWidget> {
       child: Container(
         margin: EdgeInsets.symmetric(horizontal: 1),
         width: double.infinity,
-        child: ClipRRect(
-          borderRadius: BorderRadius.circular(10),
-          child: Image.network(
-            urlImage.sliderImages,
-            fit: BoxFit.fill,
-          ),
+        child: Image.network(
+          urlImage.sliderImages,
+          fit: BoxFit.fill,
         ),
       ),
     );

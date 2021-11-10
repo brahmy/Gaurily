@@ -1,5 +1,6 @@
 import "package:flutter/material.dart";
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
+import 'package:gaurily/screens/ProductDetailScreen.dart';
 import '/models/ItemListScreenModel.dart';
 
 class ItemListScreen extends StatefulWidget {
@@ -51,7 +52,7 @@ class _ItemListScreenState extends State<ItemListScreen> {
     ),
     ItemListScreenModel(
       image:
-      "https://images.pexels.com/photos/4241706/pexels-photo-4241706.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+          "https://images.pexels.com/photos/4241706/pexels-photo-4241706.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
       title: 'Anchor/Marinar Chain',
       head: 'Anchor/Marinar Chain',
       subTitle: 'Anchor/Marinar Chain',
@@ -59,7 +60,7 @@ class _ItemListScreenState extends State<ItemListScreen> {
     ),
     ItemListScreenModel(
       image:
-      "https://images.pexels.com/photos/1028927/pexels-photo-1028927.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+          "https://images.pexels.com/photos/1028927/pexels-photo-1028927.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
       title: 'Rope Chan',
       head: 'Rope Chan',
       subTitle: 'Rope Chan',
@@ -67,7 +68,7 @@ class _ItemListScreenState extends State<ItemListScreen> {
     ),
     ItemListScreenModel(
       image:
-      "https://images.pexels.com/photos/1454172/pexels-photo-1454172.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+          "https://images.pexels.com/photos/1454172/pexels-photo-1454172.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
       title: 'Snake Chain',
       head: 'Snake Chain',
       subTitle: 'Snake Chain',
@@ -206,10 +207,10 @@ class _ItemListScreenState extends State<ItemListScreen> {
               Text(
                 'Lorem ipsum',
                 style: TextStyle(
-                  color: Colors.black,
-                  fontSize: 26,
-                  fontWeight: FontWeight.bold,
-                ),
+                    color: Colors.black,
+                    fontSize: 26,
+                    fontWeight: FontWeight.bold,
+                    fontFamily: 'Poppins'),
               ),
               SizedBox(
                 height: 10,
@@ -220,8 +221,8 @@ class _ItemListScreenState extends State<ItemListScreen> {
                     crossAxisCount: 2,
                     itemCount: _itemsList.length,
                     staggeredTileBuilder: (index) => StaggeredTile.fit(1),
-                    crossAxisSpacing: 20,
-                    mainAxisSpacing: 20,
+                    crossAxisSpacing: 15,
+                    mainAxisSpacing: 15,
                     itemBuilder: (context, index) => buildIteList(
                       _itemsList[index],
                     ),
@@ -251,63 +252,89 @@ class _ItemListScreenState extends State<ItemListScreen> {
     }
 
     return Container(
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Stack(
-            children: [
-              Container(
-                height: 190,
-                width: 190,
-                child: ClipRRect(
-                  borderRadius: BorderRadius.circular(10),
-                  child: Image.network(
-                    items.image,
-                    fit: BoxFit.cover,
+
+      child: GestureDetector(
+        onTap: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => ProductDetailScreen(),
+            ),
+          );
+        },
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Container(
+              width: double.infinity,
+              child: Stack(
+                children: [
+                  Container(
+                    height: 200,
+                    width: double.infinity,
+                    child: Image.network(
+                      items.image,
+                      fit: BoxFit.cover,
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Align(
+                      alignment: Alignment.topRight,
+                      child: Container(
+                        height: 35,
+                        width: 35,
+                        decoration: BoxDecoration(
+                            color: Colors.white,
+                            borderRadius: BorderRadius.circular(20)),
+                        child: IconButton(
+                          icon: Icon(
+                            Icons.favorite,
+                            color: items.isSelected ? Colors.red : Colors.grey,
+                            size: 20,
+                          ),
+                          onPressed: () => items.isSelected
+                              ? _isAfterPressed()
+                              : _isPressed(),
+                        ),
+                      ),
+                    ),
+                  )
+                ],
+              ),
+            ),
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  items.title,
+                  style: TextStyle(
+                    fontSize: 16,
+                    fontFamily: 'Poppins',
                   ),
                 ),
-              ),
-              Align(
-                alignment: Alignment.topRight,
-                child: Padding(
-                  padding: const EdgeInsets.all(1.0),
-                  child: Container(
-                    height: 35,
-                    width: 35,
-                    decoration: BoxDecoration(
-                        color: Colors.white,
-                        borderRadius: BorderRadius.circular(20)),
-                    child: IconButton(
-                      icon: Icon(
-                        Icons.favorite,
-                        color: items.isSelected ? Colors.red : Colors.grey,
-                        size: 20,
-                      ),
-                      onPressed: () =>
-                          items.isSelected ? _isAfterPressed() : _isPressed(),
+                SizedBox(height: 5),
+                SizedBox(
+                  child: Text(
+                    items.head,
+                    style: TextStyle(
+                      fontSize: 16,
+                      fontWeight: FontWeight.bold,
+                      fontFamily: 'Poppins',
                     ),
                   ),
                 ),
-              )
-            ],
-          ),
-          Text(
-            items.title,
-            style: TextStyle(
-              fontSize: 16,
+                SizedBox(height: 5),
+                Text(
+                  items.subTitle,
+                  style: TextStyle(
+                    fontFamily: 'Poppins',
+                  ),
+                )
+              ],
             ),
-          ),
-          SizedBox(height: 5),
-          Text(
-            items.head,
-            style: TextStyle(
-              fontSize: 16,
-              fontWeight: FontWeight.bold,
-            ),
-          ),
-          SizedBox(height: 3),
-          Text(items.subTitle)
-        ],
+          ],
+        ),
       ),
     );
   }

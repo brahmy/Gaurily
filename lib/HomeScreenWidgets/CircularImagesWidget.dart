@@ -55,7 +55,7 @@ class _CircularImagesWidgetState extends State<CircularImagesWidget> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 90,
+      height: 100,
       width: double.infinity,
       child: Padding(
         padding: const EdgeInsets.all(10),
@@ -79,7 +79,7 @@ class _CircularImagesWidgetState extends State<CircularImagesWidget> {
         children: [
           Container(
             width: 50.0,
-            height: 45.0,
+            height: 50.0,
             decoration: BoxDecoration(
               color: Colors.white,
               borderRadius: BorderRadius.all(
@@ -100,6 +100,7 @@ class _CircularImagesWidgetState extends State<CircularImagesWidget> {
             items.title,
             style: TextStyle(
               fontWeight: FontWeight.bold,
+              fontFamily: 'Poppins'
             ),
           )
         ],

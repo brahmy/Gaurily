@@ -17,7 +17,7 @@ class GridViewWidget extends StatelessWidget {
       height: 400,
       width: double.infinity,
       child: Padding(
-        padding: const EdgeInsets.all(30.0),
+        padding: const EdgeInsets.symmetric(vertical: 10,horizontal: 5),
         child: StaggeredGridView.countBuilder(
           crossAxisCount: 4,
           itemCount: gridView.length,
@@ -37,12 +37,9 @@ class GridViewWidget extends StatelessWidget {
                   Container(
                     height: 200,
                     width: 200,
-                    child: ClipRRect(
-                      borderRadius: BorderRadius.circular(10),
-                      child: Image.network(
-                        gridView[index],
-                        fit: BoxFit.fill,
-                      ),
+                    child: Image.network(
+                      gridView[index],
+                      fit: BoxFit.fill,
                     ),
                   ),
                   Padding(
@@ -55,11 +52,17 @@ class GridViewWidget extends StatelessWidget {
                         children: [
                           Text(
                             'Lorem Ipsum',
-                            style: TextStyle(color: Colors.white),
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontFamily: 'Poppins',
+                            ),
                           ),
                           Text(
                             'Lorem Ipsum dolor sit',
-                            style: TextStyle(color: Colors.white),
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontFamily: 'Poppins',
+                            ),
                           ),
                         ],
                       ),

@@ -22,111 +22,124 @@ class _AboutScreen1State extends State<AboutScreen1> {
     }
   }
 
-  List _animatedWidgets = [
-    Container(
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Container(
-            height: 250,
-            child: Image.asset("assets/A1.png"),
-          ),
-          SizedBox(
-            height: 40,
-          ),
-          Text(
-            'Lorem Ipsum dolor sit amet',
-            style: TextStyle(
-                color: Color(0xFFFCD3B6),
-                fontSize: 20,
-                fontWeight: FontWeight.bold),
-          ),
-          SizedBox(height: 20),
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 20),
-            child: Text(
-              'Lorem ipsum dolor si amet, consetetur sadipscing elitr, sed',
-              style: TextStyle(
-                color: Color(0xFFFCD3B6),
-                fontSize: 16,
-              ),
-            ),
-          ),
-        ],
-      ),
-    ),
-    Container(
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Container(
-            height: 250,
-            child: Image.asset("assets/A2.png"),
-          ),
-          SizedBox(
-            height: 40,
-          ),
-          Text(
-            'Lorem Ipsum dolor sit amet',
-            style: TextStyle(
-                color: Color(0xFF62D9B4),
-                fontSize: 20,
-                fontWeight: FontWeight.bold),
-          ),
-          SizedBox(height: 20),
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 20),
-            child: Text(
-              'Lorem ipsum dolor si amet, consetetur sadipscing elitr, sed',
-              style: TextStyle(
-                color: Color(0xFF62D9B4),
-                fontSize: 16,
-              ),
-            ),
-          ),
-        ],
-      ),
-    ),
-    Container(
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Container(
-            height: 250,
-            child: Image.asset("assets/A3.png"),
-          ),
-          SizedBox(
-            height: 40,
-          ),
-          Text(
-            'Lorem Ipsum dolor sit amet',
-            style: TextStyle(
-                color: Color(0xFFFDDDB7),
-                fontSize: 20,
-                fontWeight: FontWeight.bold),
-          ),
-          SizedBox(height: 20),
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 20),
-            child: Text(
-              'Lorem ipsum dolor si amet, consetetur sadipscing elitr, sed',
-              style: TextStyle(
-                color: Color(0xFFFDDDB7),
-                fontSize: 16,
-              ),
-            ),
-          ),
-        ],
-      ),
-    ),
-  ];
-
   @override
   Widget build(BuildContext context) {
     final mediaQuery = MediaQuery.of(context);
 
     final double circleRadius = 160.0;
     final double circleBorderWidth = 10.0;
+
+    List _animatedWidgets = [
+      Container(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            SizedBox(
+              height: mediaQuery.size.height * 0.02,
+            ),
+            Container(
+              height: mediaQuery.size.height * 0.3,
+              child: Image.asset("assets/A1.png"),
+            ),
+            SizedBox(
+              height: mediaQuery.size.height * 0.1,
+            ),
+            Text(
+              'Lorem Ipsum dolor sit amet',
+              style: TextStyle(
+                  color: Color(0xFFFCD3B6),
+                  fontSize: 20,
+                  fontWeight: FontWeight.bold,
+                  fontFamily: 'Poppins'),
+            ),
+            SizedBox(height: mediaQuery.size.height * 0.02),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 20),
+              child: Text(
+                'Lorem ipsum dolor si amet, consetetur sadipscing elitr, sed',
+                style: TextStyle(
+                    color: Color(0xFFFCD3B6),
+                    fontSize: 16,
+                    fontFamily: 'Poppins'),
+              ),
+            ),
+          ],
+        ),
+      ),
+      Container(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            SizedBox(
+              height: mediaQuery.size.height * 0.02,
+            ),
+            Container(
+              height: mediaQuery.size.height * 0.3,
+              child: Image.asset("assets/A2.png"),
+            ),
+            SizedBox(
+              height: mediaQuery.size.height * 0.1,
+            ),
+            Text(
+              'Lorem Ipsum dolor sit amet',
+              style: TextStyle(
+                color: Color(0xFF62D9B4),
+                fontSize: 20,
+                fontWeight: FontWeight.bold,
+                fontFamily: 'Poppins',
+              ),
+            ),
+            SizedBox(height: mediaQuery.size.height * 0.02),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 20),
+              child: Text(
+                'Lorem ipsum dolor si amet, consetetur sadipscing elitr, sed',
+                style: TextStyle(
+                    color: Color(0xFF62D9B4),
+                    fontSize: 16,
+                    fontFamily: 'Poppins'),
+              ),
+            ),
+          ],
+        ),
+      ),
+      Container(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            SizedBox(
+              height: mediaQuery.size.height * 0.02,
+            ),
+            Container(
+              height: mediaQuery.size.height * 0.3,
+              child: Image.asset("assets/A3.png"),
+            ),
+            SizedBox(
+              height: mediaQuery.size.height * 0.1,
+            ),
+            Text(
+              'Lorem Ipsum dolor sit amet',
+              style: TextStyle(
+                  color: Color(0xFF62D9B4),
+                  fontSize: 20,
+                  fontWeight: FontWeight.bold,
+                  fontFamily: 'Poppins'),
+            ),
+            SizedBox(height: mediaQuery.size.height * 0.02),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 20),
+              child: Text(
+                'Lorem ipsum dolor si amet, consetetur sadipscing elitr, sed',
+                style: TextStyle(
+                    color: Color(0xFFFDDDB7),
+                    fontSize: 16,
+                    fontFamily: 'Poppins'),
+              ),
+            ),
+          ],
+        ),
+      ),
+    ];
 
     return Scaffold(
       backgroundColor: Colors.white,
@@ -135,7 +148,7 @@ class _AboutScreen1State extends State<AboutScreen1> {
           child: Column(
             children: [
               SizedBox(
-                height: mediaQuery.size.height * 0.06,
+                height: mediaQuery.size.height * 0.050,
               ),
               Stack(
                 alignment: Alignment.topCenter,
@@ -144,7 +157,7 @@ class _AboutScreen1State extends State<AboutScreen1> {
                     padding: EdgeInsets.only(top: circleRadius / 2.0),
                     child: Container(
                       //replace this Container with your Card
-                      height: mediaQuery.size.height * 0.136,
+                      height: mediaQuery.size.height * 0.1,
                       decoration: BoxDecoration(
                           color: index == 0
                               ? Colors.black
@@ -190,7 +203,7 @@ class _AboutScreen1State extends State<AboutScreen1> {
                         : index == 2
                             ? Color(0xFF292629)
                             : null,
-                height: mediaQuery.size.height * 0.653,
+                height: mediaQuery.size.height * 0.75,
                 width: double.infinity,
                 child: Column(
                   children: [
@@ -204,7 +217,7 @@ class _AboutScreen1State extends State<AboutScreen1> {
                       child: _animatedWidgets[index],
                     ),
                     SizedBox(
-                      height: mediaQuery.size.height * 0.05,
+                      height: mediaQuery.size.height * 0.1,
                     ),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -216,7 +229,9 @@ class _AboutScreen1State extends State<AboutScreen1> {
                                 Text(
                                   'Skip',
                                   style: TextStyle(
-                                      color: Colors.white, fontSize: 18),
+                                      color: Colors.white,
+                                      fontSize: 18,
+                                      fontFamily: 'Poppins'),
                                 ),
                                 SizedBox(height: 4),
                                 Container(
@@ -243,7 +258,9 @@ class _AboutScreen1State extends State<AboutScreen1> {
                                   Text(
                                     'Next',
                                     style: TextStyle(
-                                        color: Colors.white, fontSize: 18),
+                                        color: Colors.white,
+                                        fontSize: 18,
+                                        fontFamily: 'Poppins'),
                                   ),
                                   SizedBox(
                                     height: 4,

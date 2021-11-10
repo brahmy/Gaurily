@@ -73,12 +73,14 @@ class _BagScreenState extends State<BagScreen> {
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
                 Icon(Icons.location_on_outlined),
-                Text('Deliver to:'),
+                Text(
+                  'Deliver to:',
+                  style: TextStyle(fontFamily: 'Poppins'),
+                ),
                 Text(
                   '524003',
                   style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                  ),
+                      fontWeight: FontWeight.bold, fontFamily: 'Poppins'),
                 )
               ],
             ),
@@ -87,8 +89,10 @@ class _BagScreenState extends State<BagScreen> {
             onPressed: () {},
             child: Text(
               'Change',
-              style:
-                  TextStyle(fontWeight: FontWeight.bold, color: Colors.black),
+              style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                  color: Colors.black,
+                  fontFamily: 'Poppins'),
             ),
           )
         ],
@@ -136,6 +140,7 @@ class _BagScreenState extends State<BagScreen> {
                       style: TextStyle(
                         fontSize: 20,
                         fontWeight: FontWeight.bold,
+                        fontFamily: 'Poppins'
                       ),
                     ),
                     Text(
@@ -143,6 +148,7 @@ class _BagScreenState extends State<BagScreen> {
                       style: TextStyle(
                         color: Colors.blue,
                         fontWeight: FontWeight.bold,
+
                       ),
                     )
                   ],
@@ -152,7 +158,10 @@ class _BagScreenState extends State<BagScreen> {
                   height: 40,
                   child: ElevatedButton(
                     onPressed: () {},
-                    child: Text('Continue',style: TextStyle(fontSize: 18),),
+                    child: Text(
+                      'Continue',
+                      style: TextStyle(fontSize: 18),
+                    ),
                     style: ElevatedButton.styleFrom(
                       primary: Colors.orange.shade400,
                     ),
@@ -173,7 +182,7 @@ class _BagScreenState extends State<BagScreen> {
         child: Column(
           children: [
             Container(
-              height: 200,
+              height: 220,
               padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
               child: Row(
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -187,9 +196,10 @@ class _BagScreenState extends State<BagScreen> {
                         style: TextStyle(
                           fontWeight: FontWeight.bold,
                           fontSize: 18,
+                          fontFamily: 'Poppins'
                         ),
                       ),
-                      Text('From Gaurily'),
+                      Text('From Gaurily',style: TextStyle(fontFamily: 'Poppins')),
                       SizedBox(height: 7),
                       Row(
                         children: [
@@ -198,6 +208,7 @@ class _BagScreenState extends State<BagScreen> {
                             style: TextStyle(
                               fontSize: 20,
                               fontWeight: FontWeight.bold,
+                              fontFamily: 'Poppins'
                             ),
                           ),
                           SizedBox(width: 7),
@@ -207,6 +218,7 @@ class _BagScreenState extends State<BagScreen> {
                               fontSize: 16,
                               fontWeight: FontWeight.bold,
                               color: Colors.grey.shade300,
+                              fontFamily: 'Poppins'
                             ),
                           ),
                         ],
@@ -215,6 +227,7 @@ class _BagScreenState extends State<BagScreen> {
                         'You are saving Rs.${items.discountPrice.toString()}',
                         style: TextStyle(
                           color: Colors.green,
+                          fontFamily: 'Poppins'
                         ),
                       ),
                       SizedBox(height: 10),
@@ -227,6 +240,7 @@ class _BagScreenState extends State<BagScreen> {
                                 style: TextStyle(
                                   fontWeight: FontWeight.bold,
                                   fontSize: 16,
+                                  fontFamily: 'Poppins'
                                 ),
                               ),
                             ),
@@ -276,10 +290,7 @@ class _BagScreenState extends State<BagScreen> {
                     ],
                   ),
                   Container(
-                    child: ClipRRect(
-                      borderRadius: BorderRadius.circular(10),
-                      child: Image.network(items.image),
-                    ),
+                    child: Image.network(items.image),
                   ),
                 ],
               ),
@@ -300,6 +311,8 @@ class _BagScreenState extends State<BagScreen> {
                       style: TextStyle(
                         color: Colors.grey.shade400,
                         fontSize: 17,
+                        fontFamily: 'Poppins',
+                        fontWeight: FontWeight.bold
                       ),
                     ),
                   ),
@@ -314,6 +327,8 @@ class _BagScreenState extends State<BagScreen> {
                       'Move To WishList',
                       style: TextStyle(
                         fontSize: 17,
+                        fontFamily: 'Poppins',
+                        fontWeight: FontWeight.bold
                       ),
                     ),
                   ),
