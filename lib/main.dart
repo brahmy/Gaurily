@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:gaurily/home_screen.dart';
-import 'package:gaurily/screens/auth/splash_screen.dart';
+import 'package:gaurily/screens/auth/SplashScreen.dart';
 
 void main() {
   runApp(MyApp());
