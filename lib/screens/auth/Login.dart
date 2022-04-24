@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:gaurily/screens/auth/registration.dart';
+import 'package:gaurily/screens/auth/Registration.dart';
 import 'package:otp_text_field/otp_field.dart';
 import 'package:otp_text_field/otp_field_style.dart';
 import 'package:otp_text_field/style.dart';
 import 'package:pin_code_fields/pin_code_fields.dart';
+
 // import 'package:gaurily/screens/HomeCategoryTabs.dart';
 // import 'package:gaurily/screens/grid_screen.dart';
 
@@ -70,87 +71,7 @@ class _LoginState extends State<Login> {
   int index = 0;
   int index1 = 0;
 
-  List<Widget> _widgets = [
-    Container(
-      child: Column(
-        children: [
-          Container(
-            height: 50,
-            width: 330,
-            child: TextFormField(
-              decoration: InputDecoration(
-                  contentPadding: EdgeInsets.only(left: 35),
-                  enabledBorder: OutlineInputBorder(
-                    borderSide:
-                        BorderSide(color: Colors.grey.shade700, width: 2),
-                    borderRadius: BorderRadius.circular(30),
-                  ),
-                  focusedBorder: OutlineInputBorder(
-                    borderSide:
-                        BorderSide(color: Colors.grey.shade700, width: 2),
-                    borderRadius: BorderRadius.circular(30),
-                  ),
-                  labelText: 'Mobile Number',
-                  labelStyle: TextStyle(color: Colors.grey.shade600)),
-            ),
-          ),
-          Padding(
-            padding: const EdgeInsets.only(right: 40),
-            child: Align(
-              alignment: Alignment.topRight,
-              child: TextButton(
-                child: Text(
-                  'Login with diffrent number',
-                  style: TextStyle(color: Colors.grey[400]),
-                ),
-                onPressed: () {},
-              ),
-            ),
-          ),
-        ],
-      ),
-    ),
-    Column(
-      children: [
-        Container(
-          height: 50,
-          width: 330,
-          decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(30),
-              border: Border.all(color: Colors.grey.shade600)),
-          child: Padding(
-            padding: const EdgeInsets.only(bottom: 8),
-            child: OTPTextField(
-              length: 4,
-              textFieldAlignment: MainAxisAlignment.spaceAround,
-              fieldStyle: FieldStyle.underline,
-              otpFieldStyle:
-                  OtpFieldStyle(enabledBorderColor: Colors.grey.shade700),
-            ),
-          ),
-        ),
-        SizedBox(
-          height: 5,
-        ),
-        Padding(
-          padding: const EdgeInsets.only(right: 40),
-          child: Align(
-            alignment: Alignment.centerRight,
-            child: TextButton(
-                onPressed: () {},
-                child: Text(
-                  'Resend OTP',
-                  style: TextStyle(color: Colors.grey, fontSize: 16),
-                )),
-          ),
-        ),
-      ],
-    ),
-  ];
-  List _buttonValue = [
-    'Get OTP',
-    'Login',
-  ];
+
 
   void _changeState() {
     if (index != 1 || index1 != 1) {
@@ -168,6 +89,73 @@ class _LoginState extends State<Login> {
 
   @override
   Widget build(BuildContext context) {
+    final mediaQuery = MediaQuery.of(context);
+
+    List<Widget> _widgets = [
+      Container(
+        child: Column(
+          children: [
+            Container(
+              height: 50,
+              width: 330,
+              child: TextFormField(
+                decoration: InputDecoration(
+                    contentPadding: EdgeInsets.only(left: 35),
+                    enabledBorder: OutlineInputBorder(
+                      borderSide: BorderSide(color: Color(0xFF05014a), width: 2),
+                      borderRadius: BorderRadius.circular(30),
+                    ),
+                    focusedBorder: OutlineInputBorder(
+                      borderSide: BorderSide(color: Color(0xFF05014a), width: 2),
+                      borderRadius: BorderRadius.circular(30),
+                    ),
+                    labelText: 'Mobile Number',
+                    labelStyle: TextStyle(color: Color(0xFF05014a))),
+              ),
+            ),
+
+          ],
+        ),
+      ),
+      Column(
+        children: [
+          Container(
+            height: 50,
+            width: 330,
+            decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(30),
+                border: Border.all(color: Color(0xFF05014a))),
+            child: Padding(
+              padding: const EdgeInsets.only(bottom: 8),
+              child: OTPTextField(
+                length: 4,
+                textFieldAlignment: MainAxisAlignment.spaceAround,
+                fieldStyle: FieldStyle.underline,
+                otpFieldStyle:
+                OtpFieldStyle(enabledBorderColor: Color(0xFF05014a)),
+              ),
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.only(right: 40),
+            child: Align(
+              alignment: Alignment.centerRight,
+              child: TextButton(
+                  onPressed: () {},
+                  child: Text(
+                    'Resend OTP',
+                    style: TextStyle(color: Colors.grey, fontSize: 16),
+                  )),
+            ),
+          ),
+        ],
+      ),
+    ];
+    List _buttonValue = [
+      'Get OTP',
+      'Login',
+    ];
+
     return Scaffold(
       backgroundColor: Colors.white,
       body: SafeArea(
@@ -175,61 +163,18 @@ class _LoginState extends State<Login> {
           child: Center(
             child: Column(
               children: [
-                SizedBox(height: 60),
-                Stack(
-                  alignment: Alignment.topCenter,
-                  children: <Widget>[
-                    Padding(
-                      padding: EdgeInsets.only(top: circleRadius / 2.0),
-                      child: Container(
-                        //replace this Container with your Card
-                        height: 110.0,
-                        decoration: BoxDecoration(
-                            color: Colors.grey[100],
-                            borderRadius: BorderRadius.only(
-                                topLeft: Radius.circular(20),
-                                topRight: Radius.circular(20))),
-                      ),
-                    ),
-                    Container(
-                      width: circleRadius,
-                      height: circleRadius,
-                      decoration: ShapeDecoration(
-                          shape: CircleBorder(), color: Colors.white),
-                      child: Padding(
-                        padding: EdgeInsets.all(circleBorderWidth),
-                        child: ClipOval(
-                          child: Container(
-                            height: 200,
-                            width: 200,
-                            color: Colors.white,
-                            child: Image.asset(
-                              'assets/onlyLogo.png',
-                              width: 200.0,
-                              height: 200.0,
-                              fit: BoxFit.contain,
-                            ),
-                          ),
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
+                SizedBox(height: mediaQuery.size.height * 0.2),
                 Container(
-                  color: Colors.grey[100],
-                  height: 700,
                   child: Column(
                     children: [
-                      Padding(
-                        padding: const EdgeInsets.all(10.0),
-                        child: Image.asset('assets/logoName.png'),
+                      Image.asset("assets/loginlogo.png"),
+                      SizedBox(
+                        height: mediaQuery.size.height * 0.1,
                       ),
-                      SizedBox(height: 80),
                       _widgets[index1],
                       SizedBox(
-                        height: 5,
+                        height: mediaQuery.size.height * 0.025,
                       ),
-                      SizedBox(height: 40),
                       Container(
                         height: 50,
                         width: 330,
@@ -247,10 +192,19 @@ class _LoginState extends State<Login> {
                           style: ElevatedButton.styleFrom(
                               shape: RoundedRectangleBorder(
                                   borderRadius: BorderRadius.circular(30)),
-                              primary: Colors.grey.shade700),
+                              primary: Color(0xFF05014a)),
                         ),
                       ),
-                      SizedBox(height: 15),
+                      SizedBox(
+                        height: mediaQuery.size.height * 0.02,
+                      ),
+                      TextButton(
+                        child: Text(
+                          'Login with diffrent number',
+                          style: TextStyle(color: Colors.grey[400]),
+                        ),
+                        onPressed: () {},
+                      ),
                       TextButton(
                         onPressed: () {},
                         child: Text(

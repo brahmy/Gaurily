@@ -1,7 +1,7 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:gaurily/screens/auth/about_screen_1.dart';
+import 'package:gaurily/screens/auth/AboutScreen.dart';
 
 class SplashScreen extends StatefulWidget {
   @override
@@ -24,7 +24,7 @@ class _SplashScreenState extends State<SplashScreen> {
       backgroundColor: Colors.white,
       body: Center(
         child: Image.asset(
-          'assets/logo.png',
+          'assets/loginlogo.png',
           fit: BoxFit.cover,
         ),
       ),
